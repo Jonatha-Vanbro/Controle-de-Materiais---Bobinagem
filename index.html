@@ -550,7 +550,7 @@
 
 
     /* =====================================================
-       TABELA
+       TABELA ESTOQUE
        ===================================================== */
 
     .table-container {
@@ -1102,13 +1102,6 @@
        ESTADOS
        ===================================================== */
 
-    .loading {
-      opacity: 0.6;
-
-      pointer-events: none;
-    }
-
-
     .estado-tabela {
       padding: 30px 15px !important;
 
@@ -1389,15 +1382,11 @@
 
       <div class="row g-4">
 
-        <!-- ===================================================
-             COLUNA ESQUERDA
-             =================================================== -->
+        <!-- COLUNA ESQUERDA -->
 
         <div class="col-lg-4 col-md-5">
 
-          <!-- ===============================================
-               NOVA MOVIMENTAÇÃO
-               =============================================== -->
+          <!-- NOVA MOVIMENTAÇÃO -->
 
           <div class="card-custom p-4 mb-4">
 
@@ -1415,8 +1404,6 @@
 
 
             <form id="formMovimento">
-
-              <!-- TIPO -->
 
               <div class="mb-3">
 
@@ -1443,8 +1430,6 @@
               </div>
 
 
-              <!-- MATERIAL -->
-
               <div class="mb-3">
 
                 <label class="form-label fw-bold">
@@ -1466,8 +1451,6 @@
               </div>
 
 
-              <!-- QUANTIDADE -->
-
               <div class="mb-3">
 
                 <label class="form-label fw-bold">
@@ -1487,8 +1470,6 @@
               </div>
 
 
-              <!-- RESPONSÁVEL -->
-
               <div class="mb-4">
 
                 <label class="form-label fw-bold">
@@ -1506,8 +1487,6 @@
               </div>
 
 
-              <!-- BOTÃO -->
-
               <button
                 type="submit"
                 class="w-100 btn btn-registrar btn-lg"
@@ -1521,9 +1500,7 @@
           </div>
 
 
-          <!-- ===============================================
-               ÚLTIMOS REGISTROS
-               =============================================== -->
+          <!-- ÚLTIMOS REGISTROS -->
 
           <div class="card-historico p-4">
 
@@ -1571,15 +1548,11 @@
         </div>
 
 
-        <!-- ===================================================
-             COLUNA DIREITA
-             =================================================== -->
+        <!-- COLUNA DIREITA -->
 
         <div class="col-lg-8 col-md-7">
 
           <div class="card-custom p-3 p-lg-4">
-
-            <!-- CABEÇALHO -->
 
             <div class="estoque-header">
 
@@ -1618,8 +1591,6 @@
 
             </div>
 
-
-            <!-- TABELA -->
 
             <div class="table-container">
 
@@ -1694,15 +1665,13 @@
 
 
     <!-- =====================================================
-         TELA HISTÓRICO COMPLETO
+         TELA HISTÓRICO
          ===================================================== -->
 
     <section
       id="telaHistorico"
       class="tela"
     >
-
-      <!-- CABEÇALHO -->
 
       <div class="historico-cabecalho">
 
@@ -1738,13 +1707,9 @@
       </div>
 
 
-      <!-- ===================================================
-           RESUMO
-           =================================================== -->
+      <!-- RESUMO -->
 
       <div class="row g-3 mb-4">
-
-        <!-- TOTAL -->
 
         <div class="col-xl-3 col-md-6">
 
@@ -1780,8 +1745,6 @@
         </div>
 
 
-        <!-- ENTRADAS -->
-
         <div class="col-xl-3 col-md-6">
 
           <div class="resumo-card resumo-entrada">
@@ -1815,8 +1778,6 @@
 
         </div>
 
-
-        <!-- SAÍDAS -->
 
         <div class="col-xl-3 col-md-6">
 
@@ -1852,8 +1813,6 @@
         </div>
 
 
-        <!-- QUANTIDADE -->
-
         <div class="col-xl-3 col-md-6">
 
           <div class="resumo-card">
@@ -1878,7 +1837,7 @@
               </div>
 
               <div class="resumo-icone">
-                # 
+                #
               </div>
 
             </div>
@@ -1890,9 +1849,7 @@
       </div>
 
 
-      <!-- ===================================================
-           FILTROS
-           =================================================== -->
+      <!-- FILTROS -->
 
       <div class="filtros-card">
 
@@ -1903,20 +1860,24 @@
 
         <div class="row g-3">
 
-          <!-- PESQUISA -->
+          <!-- MATERIAL -->
 
           <div class="col-lg-4 col-md-6">
 
             <label class="form-label">
-              Pesquisa
+              Material
             </label>
 
-            <input
-              type="text"
-              class="form-control"
-              id="filtroPesquisa"
-              placeholder="ID, código ou material..."
+            <select
+              class="form-select"
+              id="filtroMaterial"
             >
+
+              <option value="">
+                Todos os materiais
+              </option>
+
+            </select>
 
           </div>
 
@@ -2037,9 +1998,7 @@
       </div>
 
 
-      <!-- ===================================================
-           TABELA HISTÓRICO
-           =================================================== -->
+      <!-- TABELA HISTÓRICO -->
 
       <div class="card-custom p-3 p-lg-4">
 
@@ -2114,8 +2073,6 @@
           </div>
 
 
-          <!-- PAGINAÇÃO -->
-
           <div class="paginacao-container">
 
             <div
@@ -2127,7 +2084,6 @@
 
 
             <div id="paginacaoBotoes">
-
             </div>
 
           </div>
@@ -2141,9 +2097,9 @@
   </div>
 
 
-  <!-- =========================================================
-       MODAL DE CONFIRMAÇÃO
-       ========================================================= -->
+  <!-- =====================================================
+       MODAL
+       ===================================================== -->
 
   <div
     class="modal fade modal-confirmacao"
@@ -2290,32 +2246,28 @@
   </div>
 
 
-  <!-- =========================================================
+  <!-- =====================================================
        BOOTSTRAP
-       ========================================================= -->
+       ===================================================== -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   ></script>
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
-
   <script>
 
-    /* =========================================================
-       URL DO GOOGLE APPS SCRIPT
-       ========================================================= */
+    /* =====================================================
+       URL APPS SCRIPT
+       ===================================================== */
 
     const URL_APPS_SCRIPT =
       "https://script.google.com/macros/s/AKfycbyR_vDSIROZAGPJDdfXRwlQha4-F7h0sH6v9P_A-XVzQHK2QIcPK02quYp2CC-sz3zM/exec";
 
 
-    /* =========================================================
+    /* =====================================================
        VARIÁVEIS
-       ========================================================= */
+       ===================================================== */
 
     let listaMateriais = [];
 
@@ -2328,9 +2280,9 @@
     const REGISTROS_POR_PAGINA = 15;
 
 
-    /* =========================================================
+    /* =====================================================
        ESCAPAR HTML
-       ========================================================= */
+       ===================================================== */
 
     function escaparHTML(texto) {
 
@@ -2354,9 +2306,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FORMATAR CÓDIGO
-       ========================================================= */
+       ===================================================== */
 
     function formatarCodigo(codigo) {
 
@@ -2385,9 +2337,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FORMATAR NÚMERO
-       ========================================================= */
+       ===================================================== */
 
     function formatarNumero(valor) {
 
@@ -2417,9 +2369,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FORMATAR DATA/HORA
-       ========================================================= */
+       ===================================================== */
 
     function formatarDataHora(dataHora) {
 
@@ -2459,9 +2411,9 @@
     }
 
 
-    /* =========================================================
-       OBTER DATA PARA FILTRO
-       ========================================================= */
+    /* =====================================================
+       DATA LOCAL
+       ===================================================== */
 
     function obterDataLocal(dataHora) {
 
@@ -2520,9 +2472,9 @@
     }
 
 
-    /* =========================================================
-       MODAL DE SUCESSO
-       ========================================================= */
+    /* =====================================================
+       MODAL SUCESSO
+       ===================================================== */
 
     function mostrarSucesso(resultado) {
 
@@ -2639,9 +2591,9 @@
     }
 
 
-    /* =========================================================
-       MODAL DE AVISO / ERRO
-       ========================================================= */
+    /* =====================================================
+       MODAL AVISO
+       ===================================================== */
 
     function mostrarAviso(
       mensagem,
@@ -2740,9 +2692,9 @@
     }
 
 
-    /* =========================================================
-       CARREGAR DADOS PRINCIPAIS
-       ========================================================= */
+    /* =====================================================
+       CARREGAR DADOS
+       ===================================================== */
 
     function carregarDados() {
 
@@ -2880,9 +2832,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        CARREGAR HISTÓRICO COMPLETO
-       ========================================================= */
+       ===================================================== */
 
     function carregarHistoricoCompleto() {
 
@@ -3020,9 +2972,9 @@
     }
 
 
-    /* =========================================================
-       PREENCHER MATERIAIS
-       ========================================================= */
+    /* =====================================================
+       PREENCHER MATERIAIS DO FORMULÁRIO
+       ===================================================== */
 
     function preencherMateriais() {
 
@@ -3063,9 +3015,80 @@
     }
 
 
-    /* =========================================================
-       PREENCHER TABELA DE ESTOQUE
-       ========================================================= */
+    /* =====================================================
+       PREENCHER FILTRO DE MATERIAL
+       ===================================================== */
+
+    function preencherFiltroMateriais() {
+
+      const select =
+        document.getElementById(
+          "filtroMaterial"
+        );
+
+
+      const valorAtual =
+        select.value;
+
+
+      select.innerHTML =
+        '<option value="">Todos os materiais</option>';
+
+
+      /*
+       * Utilizamos a linha da planilha como valor.
+       * Isso evita problemas caso existam códigos
+       * repetidos na aba base.
+       */
+
+      listaMateriais.forEach(
+        (item) => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+
+          option.value =
+            String(
+              item.linha
+            );
+
+
+          option.textContent =
+            `${formatarCodigo(item.codigo)} - ${item.material}`;
+
+
+          select.appendChild(
+            option
+          );
+
+        }
+      );
+
+
+      if (
+        Array.from(
+          select.options
+        ).some(
+          option =>
+            option.value ===
+            valorAtual
+        )
+      ) {
+
+        select.value =
+          valorAtual;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       PREENCHER TABELA ESTOQUE
+       ===================================================== */
 
     function preencherTabela() {
 
@@ -3176,9 +3199,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        PREENCHER ÚLTIMOS REGISTROS
-       ========================================================= */
+       ===================================================== */
 
     function preencherHistorico() {
 
@@ -3281,9 +3304,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        PREENCHER RESPONSÁVEIS
-       ========================================================= */
+       ===================================================== */
 
     function preencherResponsaveis() {
 
@@ -3364,20 +3387,18 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        APLICAR FILTROS
-       ========================================================= */
+       ===================================================== */
 
     function aplicarFiltros() {
 
-      const pesquisa =
+      const materialLinha =
         document
           .getElementById(
-            "filtroPesquisa"
+            "filtroMaterial"
           )
-          .value
-          .trim()
-          .toLowerCase();
+          .value;
 
 
       const tipo =
@@ -3412,34 +3433,65 @@
           .value;
 
 
+      /*
+       * Descobrimos o material selecionado
+       * através da linha da aba base.
+       */
+
+      let materialSelecionado = null;
+
+
+      if (
+        materialLinha
+      ) {
+
+        materialSelecionado =
+          listaMateriais.find(
+            item =>
+              String(
+                item.linha
+              ) ===
+              String(
+                materialLinha
+              )
+          );
+
+      }
+
+
       historicoFiltrado =
         historico.filter(
           (h) => {
 
             /* ---------------------------------------------
-               PESQUISA
+               MATERIAL
                --------------------------------------------- */
 
             if (
-              pesquisa
+              materialSelecionado
             ) {
 
-              const texto =
-                [
-                  h.id,
-                  h.codigo,
-                  formatarCodigo(h.codigo),
-                  h.material,
-                  h.responsavel
-                ]
-                .join(" ")
-                .toLowerCase();
+              const mesmoCodigo =
+                String(
+                  h.codigo
+                ) ===
+                String(
+                  materialSelecionado.codigo
+                );
+
+
+              const mesmoMaterial =
+                String(
+                  h.material
+                ) ===
+                String(
+                  materialSelecionado.material
+                );
 
 
               if (
-                !texto.includes(
-                  pesquisa
-                )
+                !mesmoCodigo ||
+                !mesmoMaterial
               ) {
 
                 return false;
@@ -3529,9 +3581,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        ATUALIZAR RESUMO
-       ========================================================= */
+       ===================================================== */
 
     function atualizarResumo() {
 
@@ -3597,9 +3649,9 @@
     }
 
 
-    /* =========================================================
-       RENDERIZAR TABELA HISTÓRICO
-       ========================================================= */
+    /* =====================================================
+       RENDERIZAR HISTÓRICO
+       ===================================================== */
 
     function renderizarTabelaHistorico() {
 
@@ -3686,9 +3738,7 @@
             <td class="text-center">
 
               <span class="id-movimentacao">
-
                 ${escaparHTML(h.id)}
-
               </span>
 
             </td>
@@ -3708,9 +3758,7 @@
             <td class="text-center">
 
               <span class="${classeTipo}">
-
                 ${escaparHTML(h.tipo)}
-
               </span>
 
             </td>
@@ -3719,13 +3767,11 @@
             <td class="text-center">
 
               <span class="codigo-historico">
-
                 ${escaparHTML(
                   formatarCodigo(
                     h.codigo
                   )
                 )}
-
               </span>
 
             </td>
@@ -3734,11 +3780,9 @@
             <td>
 
               <span class="fw-semibold">
-
                 ${escaparHTML(
                   h.material
                 )}
-
               </span>
 
             </td>
@@ -3747,11 +3791,9 @@
             <td class="text-center">
 
               <span class="${classeQuantidade}">
-
                 ${formatarNumero(
                   h.quantidade
                 )}
-
               </span>
 
             </td>
@@ -3793,9 +3835,9 @@
     }
 
 
-    /* =========================================================
-       OBTER UNIDADE DO MATERIAL
-       ========================================================= */
+    /* =====================================================
+       OBTER UNIDADE
+       ===================================================== */
 
     function obterUnidadeMaterial(
       codigo,
@@ -3806,21 +3848,13 @@
         listaMateriais.find(
           (m) => {
 
-            const codigoMaterial =
+            return (
               String(
                 m.codigo
-              );
-
-
-            const codigoHistorico =
+              ) ===
               String(
                 codigo
-              );
-
-
-            return (
-              codigoMaterial ===
-              codigoHistorico
+              )
             ) &&
             (
               String(
@@ -3842,19 +3876,14 @@
       }
 
 
-      /*
-       * Caso o material não seja mais encontrado
-       * na aba base, deixamos vazio.
-       */
-
       return "";
 
     }
 
 
-    /* =========================================================
+    /* =====================================================
        PAGINAÇÃO
-       ========================================================= */
+       ===================================================== */
 
     function atualizarPaginacao() {
 
@@ -4104,9 +4133,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        ABRIR TELA
-       ========================================================= */
+       ===================================================== */
 
     function abrirTela(
       tela
@@ -4188,9 +4217,9 @@
     }
 
 
-    /* =========================================================
-       CARREGAR TELA DE HISTÓRICO
-       ========================================================= */
+    /* =====================================================
+       CARREGAR HISTÓRICO
+       ===================================================== */
 
     async function carregarTelaHistorico() {
 
@@ -4199,11 +4228,6 @@
           "corpoHistorico"
         );
 
-
-      /*
-       * Se já temos o histórico completo carregado,
-       * podemos apenas reaplicar os filtros.
-       */
 
       try {
 
@@ -4227,8 +4251,9 @@
           await carregarHistoricoCompleto();
 
 
-        preencherResponsaveis();
+        preencherFiltroMateriais();
 
+        preencherResponsaveis();
 
         aplicarFiltros();
 
@@ -4290,14 +4315,14 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        LIMPAR FILTROS
-       ========================================================= */
+       ===================================================== */
 
     function limparFiltros() {
 
       document.getElementById(
-        "filtroPesquisa"
+        "filtroMaterial"
       ).value =
         "";
 
@@ -4331,9 +4356,9 @@
     }
 
 
-    /* =========================================================
+    /* =====================================================
        REGISTRAR MOVIMENTAÇÃO
-       ========================================================= */
+       ===================================================== */
 
     async function registrarMovimentacao(
       dados
@@ -4379,9 +4404,9 @@
     }
 
 
-    /* =========================================================
-       ATUALIZAR INTERFACE
-       ========================================================= */
+    /* =====================================================
+       ATUALIZAR TELA PRINCIPAL
+       ===================================================== */
 
     async function atualizarTela() {
 
@@ -4400,6 +4425,8 @@
 
 
         preencherMateriais();
+
+        preencherFiltroMateriais();
 
         preencherTabela();
 
@@ -4457,9 +4484,9 @@
     }
 
 
-    /* =========================================================
-       SUBMIT DO FORMULÁRIO
-       ========================================================= */
+    /* =====================================================
+       SUBMIT FORMULÁRIO
+       ===================================================== */
 
     document
       .getElementById(
@@ -4639,12 +4666,6 @@
             await atualizarTela();
 
 
-            /*
-             * Se a tela de histórico já tiver sido
-             * utilizada, o próximo acesso buscará
-             * novamente os dados completos.
-             */
-
             mostrarSucesso(
               resultado
             );
@@ -4680,9 +4701,9 @@
       );
 
 
-    /* =========================================================
+    /* =====================================================
        BOTÃO ATUALIZAR ESTOQUE
-       ========================================================= */
+       ===================================================== */
 
     document
       .getElementById(
@@ -4724,9 +4745,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO MENU ESTOQUE
-       ========================================================= */
+    /* =====================================================
+       MENU ESTOQUE
+       ===================================================== */
 
     document
       .getElementById(
@@ -4744,9 +4765,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO MENU HISTÓRICO
-       ========================================================= */
+    /* =====================================================
+       MENU HISTÓRICO
+       ===================================================== */
 
     document
       .getElementById(
@@ -4764,9 +4785,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO VER HISTÓRICO
-       ========================================================= */
+    /* =====================================================
+       VER HISTÓRICO
+       ===================================================== */
 
     document
       .getElementById(
@@ -4784,9 +4805,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO ATUALIZAR HISTÓRICO
-       ========================================================= */
+    /* =====================================================
+       ATUALIZAR HISTÓRICO
+       ===================================================== */
 
     document
       .getElementById(
@@ -4828,9 +4849,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO FILTRAR
-       ========================================================= */
+    /* =====================================================
+       FILTRAR
+       ===================================================== */
 
     document
       .getElementById(
@@ -4846,9 +4867,9 @@
       );
 
 
-    /* =========================================================
-       BOTÃO LIMPAR FILTROS
-       ========================================================= */
+    /* =====================================================
+       LIMPAR
+       ===================================================== */
 
     document
       .getElementById(
@@ -4864,16 +4885,16 @@
       );
 
 
-    /* =========================================================
-       PESQUISA EM TEMPO REAL
-       ========================================================= */
+    /* =====================================================
+       ALTERAÇÃO DO FILTRO MATERIAL
+       ===================================================== */
 
     document
       .getElementById(
-        "filtroPesquisa"
+        "filtroMaterial"
       )
       .addEventListener(
-        "input",
+        "change",
         function() {
 
           aplicarFiltros();
@@ -4882,9 +4903,45 @@
       );
 
 
-    /* =========================================================
+    /* =====================================================
+       ALTERAÇÃO DO TIPO
+       ===================================================== */
+
+    document
+      .getElementById(
+        "filtroTipo"
+      )
+      .addEventListener(
+        "change",
+        function() {
+
+          aplicarFiltros();
+
+        }
+      );
+
+
+    /* =====================================================
+       ALTERAÇÃO DO RESPONSÁVEL
+       ===================================================== */
+
+    document
+      .getElementById(
+        "filtroResponsavel"
+      )
+      .addEventListener(
+        "change",
+        function() {
+
+          aplicarFiltros();
+
+        }
+      );
+
+
+    /* =====================================================
        INICIALIZAÇÃO
-       ========================================================= */
+       ===================================================== */
 
     document.addEventListener(
       "DOMContentLoaded",
