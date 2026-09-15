@@ -1332,6 +1332,52 @@
 
     /*
      * =========================================================
+     * FORMATAR CÓDIGO DO MATERIAL
+     *
+     * Exemplo:
+     * 100110000001
+     *        ↓
+     * 100.110.000001
+     *
+     * A formatação é apenas visual.
+     * O valor original continua sendo enviado ao Apps Script.
+     * =========================================================
+     */
+
+    function formatarCodigo(codigo) {
+
+      const numero =
+        String(codigo)
+          .replace(/\D/g, "");
+
+
+      /*
+       * Códigos diferentes de 12 dígitos
+       * permanecem como estão.
+       */
+
+      if (
+        numero.length !== 12
+      ) {
+
+        return codigo;
+
+      }
+
+
+      return (
+        numero.substring(0, 3) +
+        "." +
+        numero.substring(3, 6) +
+        "." +
+        numero.substring(6, 12)
+      );
+
+    }
+
+
+    /*
+     * =========================================================
      * MODAL DE SUCESSO
      * =========================================================
      */
@@ -1728,7 +1774,7 @@
 
 
           option.textContent =
-            `${item.codigo} - ${item.material} (${item.unidade})`;
+            `${formatarCodigo(item.codigo)} - ${item.material} (${item.unidade})`;
 
 
           select.appendChild(
@@ -1812,7 +1858,11 @@
           tr.innerHTML = `
 
             <td class="text-center">
-              ${escaparHTML(item.codigo)}
+              ${escaparHTML(
+                formatarCodigo(
+                  item.codigo
+                )
+              )}
             </td>
 
             <td class="fw-semibold">
