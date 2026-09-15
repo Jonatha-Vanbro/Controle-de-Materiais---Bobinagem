@@ -31,6 +31,10 @@
 
       --borda: #e0e4e8;
 
+      --verde: #198754;
+      --vermelho: #dc3545;
+      --amarelo: #ffc107;
+
       --sombra-card:
         0 2px 6px rgba(0, 0, 0, 0.05),
         0 8px 24px rgba(0, 0, 0, 0.06);
@@ -51,6 +55,7 @@
     body {
       background-color: var(--fundo);
       color: var(--texto);
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -58,13 +63,10 @@
         Roboto,
         Arial,
         sans-serif;
+
       min-height: 100vh;
     }
 
-
-    /* =====================================================
-       CONTAINER PRINCIPAL
-       ===================================================== */
 
     .container-fluid {
       max-width: 1700px;
@@ -89,7 +91,7 @@
 
       padding: 20px 24px;
 
-      margin-bottom: 24px;
+      margin-bottom: 14px;
 
       box-shadow:
         0 4px 10px rgba(27, 64, 121, 0.15),
@@ -119,13 +121,88 @@
       align-items: center;
       justify-content: center;
 
-      background-color: rgba(255, 255, 255, 0.14);
+      background-color:
+        rgba(255, 255, 255, 0.14);
 
       border-radius: 10px;
 
       font-size: 1.4rem;
 
       margin-right: 14px;
+    }
+
+
+    /* =====================================================
+       NAVEGAÇÃO
+       ===================================================== */
+
+    .menu-navegacao {
+      background-color: white;
+
+      border-radius: 10px;
+
+      padding: 6px;
+
+      margin-bottom: 24px;
+
+      box-shadow: var(--sombra-card);
+
+      border: 1px solid rgba(0, 0, 0, 0.035);
+    }
+
+
+    .menu-btn {
+      border: none;
+
+      background: transparent;
+
+      color: #6c757d;
+
+      font-size: 0.84rem;
+
+      font-weight: 600;
+
+      border-radius: 7px;
+
+      padding: 9px 18px;
+
+      transition: all 0.2s ease;
+    }
+
+
+    .menu-btn:hover {
+      background-color: var(--azul-claro);
+
+      color: var(--azul-principal);
+    }
+
+
+    .menu-btn.active {
+      background:
+        linear-gradient(
+          135deg,
+          #1b4079,
+          #245596
+        );
+
+      color: white;
+
+      box-shadow:
+        0 2px 6px rgba(27, 64, 121, 0.20);
+    }
+
+
+    /* =====================================================
+       TELAS
+       ===================================================== */
+
+    .tela {
+      display: none;
+    }
+
+
+    .tela.ativa {
+      display: block;
     }
 
 
@@ -156,10 +233,12 @@
     .card-title-custom {
       font-size: 1rem;
       font-weight: 700;
+
       color: var(--texto);
 
       display: flex;
       align-items: center;
+
       gap: 9px;
     }
 
@@ -188,7 +267,9 @@
 
     .form-label {
       color: #4b5563;
+
       font-size: 0.82rem;
+
       margin-bottom: 6px;
     }
 
@@ -211,10 +292,12 @@
 
     .form-control:focus,
     .form-select:focus {
-      border-color: var(--azul-principal);
+      border-color:
+        var(--azul-principal);
 
       box-shadow:
-        0 0 0 3px rgba(27, 64, 121, 0.10);
+        0 0 0 3px
+        rgba(27, 64, 121, 0.10);
     }
 
 
@@ -246,7 +329,8 @@
       font-weight: 700;
 
       box-shadow:
-        0 3px 7px rgba(27, 64, 121, 0.20);
+        0 3px 7px
+        rgba(27, 64, 121, 0.20);
 
       transition:
         transform 0.15s ease,
@@ -268,7 +352,8 @@
       transform: translateY(-1px);
 
       box-shadow:
-        0 5px 12px rgba(27, 64, 121, 0.25);
+        0 5px 12px
+        rgba(27, 64, 121, 0.25);
     }
 
 
@@ -278,7 +363,7 @@
 
 
     /* =====================================================
-       HISTÓRICO
+       HISTÓRICO RESUMIDO
        ===================================================== */
 
     .card-historico {
@@ -295,6 +380,7 @@
     .historico-titulo {
       display: flex;
       align-items: center;
+
       gap: 9px;
 
       font-size: 1rem;
@@ -325,6 +411,7 @@
 
     .historico-material {
       font-weight: 600;
+
       font-size: 0.83rem;
 
       color: #343a40;
@@ -354,8 +441,7 @@
 
       font-size: 0.68rem;
 
-      padding:
-        5px 8px;
+      padding: 5px 8px;
 
       border-radius: 6px;
     }
@@ -366,15 +452,14 @@
 
       font-size: 0.68rem;
 
-      padding:
-        5px 8px;
+      padding: 5px 8px;
 
       border-radius: 6px;
     }
 
 
     /* =====================================================
-       CABEÇALHO DA TABELA
+       CABEÇALHO ESTOQUE
        ===================================================== */
 
     .estoque-header {
@@ -449,8 +534,7 @@
 
       font-weight: 600;
 
-      padding:
-        7px 12px;
+      padding: 7px 12px;
 
       transition: all 0.2s ease;
     }
@@ -515,8 +599,7 @@
 
       white-space: nowrap;
 
-      padding:
-        11px 10px;
+      padding: 11px 10px;
 
       border-color:
         rgba(255, 255, 255, 0.12);
@@ -528,8 +611,7 @@
 
       font-size: 0.79rem;
 
-      padding:
-        10px 9px;
+      padding: 10px 9px;
 
       border-color: #edf0f2;
 
@@ -570,8 +652,7 @@
 
       min-width: 48px;
 
-      padding:
-        5px 9px;
+      padding: 5px 9px;
 
       border-radius: 6px;
 
@@ -590,15 +671,430 @@
     }
 
 
-    .estoque-baixo {
-      background-color: #fff9e6 !important;
-    }
-
-
     .estoque-negativo {
       background-color: #fff0f1 !important;
 
       color: #842029;
+    }
+
+
+    /* =====================================================
+       HISTÓRICO COMPLETO
+       ===================================================== */
+
+    .historico-cabecalho {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .historico-cabecalho-titulo {
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+    }
+
+
+    .historico-cabecalho-titulo h2 {
+      margin: 0;
+
+      font-size: 1.15rem;
+
+      font-weight: 700;
+    }
+
+
+    .historico-cabecalho-titulo p {
+      margin: 2px 0 0;
+
+      color: var(--texto-secundario);
+
+      font-size: 0.76rem;
+    }
+
+
+    /* =====================================================
+       CARDS DE RESUMO
+       ===================================================== */
+
+    .resumo-card {
+      background-color: white;
+
+      border: 1px solid
+        rgba(0, 0, 0, 0.035);
+
+      border-radius: 10px;
+
+      box-shadow: var(--sombra-card);
+
+      padding: 17px;
+
+      height: 100%;
+    }
+
+
+    .resumo-card .resumo-label {
+      color: var(--texto-secundario);
+
+      font-size: 0.73rem;
+
+      font-weight: 600;
+
+      margin-bottom: 5px;
+    }
+
+
+    .resumo-card .resumo-valor {
+      font-size: 1.45rem;
+
+      font-weight: 700;
+
+      color: var(--texto);
+    }
+
+
+    .resumo-icone {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 9px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background-color: var(--azul-claro);
+
+      color: var(--azul-principal);
+
+      font-size: 1rem;
+    }
+
+
+    .resumo-entrada .resumo-icone {
+      background-color: #e8f5ee;
+
+      color: #198754;
+    }
+
+
+    .resumo-saida .resumo-icone {
+      background-color: #fbe9eb;
+
+      color: #dc3545;
+    }
+
+
+    /* =====================================================
+       FILTROS DO HISTÓRICO
+       ===================================================== */
+
+    .filtros-card {
+      background-color: white;
+
+      border: 1px solid
+        rgba(0, 0, 0, 0.035);
+
+      border-radius: 10px;
+
+      box-shadow: var(--sombra-card);
+
+      padding: 18px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .filtros-titulo {
+      font-size: 0.84rem;
+
+      font-weight: 700;
+
+      margin-bottom: 13px;
+
+      color: var(--texto);
+    }
+
+
+    .btn-filtrar {
+      min-height: 44px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1b4079,
+          #245596
+        );
+
+      color: white;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-size: 0.82rem;
+
+      font-weight: 600;
+
+      padding: 0 18px;
+    }
+
+
+    .btn-filtrar:hover {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #153461,
+          #1b4079
+        );
+    }
+
+
+    .btn-limpar {
+      min-height: 44px;
+
+      background-color: white;
+
+      color: #5f6b76;
+
+      border: 1px solid #ccd5df;
+
+      border-radius: 8px;
+
+      font-size: 0.82rem;
+
+      font-weight: 600;
+
+      padding: 0 18px;
+    }
+
+
+    .btn-limpar:hover {
+      background-color: #f4f6f8;
+
+      color: var(--azul-principal);
+    }
+
+
+    /* =====================================================
+       TABELA HISTÓRICO
+       ===================================================== */
+
+    .tabela-historico-container {
+      border:
+        1px solid var(--borda);
+
+      border-radius: 9px;
+
+      overflow: hidden;
+
+      background-color: white;
+    }
+
+
+    .tabela-historico-scroll {
+      max-height: 62vh;
+
+      overflow: auto;
+    }
+
+
+    .tabela-historico {
+      margin-bottom: 0 !important;
+
+      min-width: 900px;
+    }
+
+
+    .tabela-historico th {
+      position: sticky;
+
+      top: 0;
+
+      z-index: 3;
+
+      background:
+        linear-gradient(
+          180deg,
+          #1b4079,
+          #173868
+        );
+
+      color: white;
+
+      font-size: 0.74rem;
+
+      font-weight: 600;
+
+      text-align: center;
+
+      white-space: nowrap;
+
+      padding: 11px 9px;
+
+      border-color:
+        rgba(255, 255, 255, 0.12);
+    }
+
+
+    .tabela-historico td {
+      font-size: 0.76rem;
+
+      padding: 10px 9px;
+
+      vertical-align: middle;
+
+      border-color: #edf0f2;
+
+      white-space: nowrap;
+    }
+
+
+    .tabela-historico tbody tr:hover {
+      background-color: #f7f9fb;
+    }
+
+
+    .id-movimentacao {
+      font-weight: 700;
+
+      color: var(--azul-principal);
+
+      font-size: 0.74rem;
+    }
+
+
+    .codigo-historico {
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      font-weight: 600;
+    }
+
+
+    .badge-historico-entrada {
+      background-color: #e8f5ee;
+
+      color: #146c43;
+
+      border-radius: 6px;
+
+      padding: 5px 8px;
+
+      font-size: 0.67rem;
+
+      font-weight: 700;
+    }
+
+
+    .badge-historico-saida {
+      background-color: #fbe9eb;
+
+      color: #b02a37;
+
+      border-radius: 6px;
+
+      padding: 5px 8px;
+
+      font-size: 0.67rem;
+
+      font-weight: 700;
+    }
+
+
+    .quantidade-entrada {
+      color: #198754;
+
+      font-weight: 700;
+    }
+
+
+    .quantidade-saida {
+      color: #dc3545;
+
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
+       PAGINAÇÃO
+       ===================================================== */
+
+    .paginacao-container {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding-top: 15px;
+    }
+
+
+    .paginacao-info {
+      color: var(--texto-secundario);
+
+      font-size: 0.74rem;
+    }
+
+
+    .btn-pagina {
+      border: 1px solid #ccd5df;
+
+      background-color: white;
+
+      color: var(--azul-principal);
+
+      min-width: 36px;
+
+      height: 34px;
+
+      border-radius: 7px;
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+
+      margin-left: 4px;
+    }
+
+
+    .btn-pagina:hover {
+      background-color: var(--azul-claro);
+    }
+
+
+    .btn-pagina.ativo {
+      background-color: var(--azul-principal);
+
+      color: white;
+
+      border-color:
+        var(--azul-principal);
+    }
+
+
+    .btn-pagina:disabled {
+      opacity: 0.45;
+
+      cursor: not-allowed;
     }
 
 
@@ -614,8 +1110,7 @@
 
 
     .estado-tabela {
-      padding:
-        30px 15px !important;
+      padding: 30px 15px !important;
 
       color: #8a939b;
 
@@ -624,7 +1119,7 @@
 
 
     /* =====================================================
-       MODAL DE CONFIRMAÇÃO
+       MODAL
        ===================================================== */
 
     .modal-confirmacao .modal-content {
@@ -633,7 +1128,8 @@
       border-radius: 14px;
 
       box-shadow:
-        0 15px 50px rgba(0, 0, 0, 0.18);
+        0 15px 50px
+        rgba(0, 0, 0, 0.18);
 
       overflow: hidden;
     }
@@ -736,10 +1232,16 @@
     @media (max-width: 991.98px) {
 
       .top-header {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
       }
 
+
       .table-responsive {
+        max-height: 60vh;
+      }
+
+
+      .tabela-historico-scroll {
         max-height: 60vh;
       }
 
@@ -750,6 +1252,7 @@
 
       .container-fluid {
         padding-left: 12px !important;
+
         padding-right: 12px !important;
       }
 
@@ -781,6 +1284,27 @@
 
 
       .estoque-header {
+        align-items: flex-start;
+      }
+
+
+      .menu-btn {
+        flex: 1;
+
+        padding-left: 8px;
+
+        padding-right: 8px;
+      }
+
+
+      .historico-cabecalho {
+        align-items: flex-start;
+      }
+
+
+      .paginacao-container {
+        flex-direction: column;
+
         align-items: flex-start;
       }
 
@@ -824,286 +1348,339 @@
     </div>
 
 
-    <div class="row g-4">
+    <!-- =====================================================
+         MENU
+         ===================================================== -->
 
-      <!-- =====================================================
-           COLUNA ESQUERDA
-           ===================================================== -->
+    <div class="menu-navegacao">
 
-      <div class="col-lg-4 col-md-5">
+      <div class="d-flex">
 
-        <!-- ===================================================
-             NOVA MOVIMENTAÇÃO
-             =================================================== -->
-
-        <div class="card-custom p-4 mb-4">
-
-          <div class="card-title-custom mb-4">
-
-            <div class="card-title-icon">
-              ⇄
-            </div>
-
-            <span>
-              Nova Movimentação
-            </span>
-
-          </div>
+        <button
+          type="button"
+          class="menu-btn active"
+          id="btnMenuEstoque"
+        >
+          📦 &nbsp; Estoque
+        </button>
 
 
-          <form id="formMovimento">
-
-            <!-- TIPO -->
-
-            <div class="mb-3">
-
-              <label class="form-label fw-bold">
-                Tipo de Movimento
-              </label>
-
-              <select
-                class="form-select"
-                id="tipo"
-                required
-              >
-
-                <option value="Entrada">
-                  Entrada
-                </option>
-
-                <option value="Saída">
-                  Saída
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <!-- MATERIAL -->
-
-            <div class="mb-3">
-
-              <label class="form-label fw-bold">
-                Material
-              </label>
-
-              <select
-                class="form-select"
-                id="selectMaterial"
-                required
-              >
-
-                <option value="">
-                  Carregando materiais...
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <!-- QUANTIDADE -->
-
-            <div class="mb-3">
-
-              <label class="form-label fw-bold">
-                Quantidade
-              </label>
-
-              <input
-                type="number"
-                class="form-control"
-                id="quantidade"
-                required
-                min="1"
-                step="1"
-                placeholder="Digite a quantidade"
-              >
-
-            </div>
-
-
-            <!-- RESPONSÁVEL -->
-
-            <div class="mb-4">
-
-              <label class="form-label fw-bold">
-                Responsável
-              </label>
-
-              <input
-                type="text"
-                class="form-control"
-                id="responsavel"
-                required
-                placeholder="Seu nome"
-              >
-
-            </div>
-
-
-            <!-- BOTÃO -->
-
-            <button
-              type="submit"
-              class="w-100 btn btn-registrar btn-lg"
-              id="btnSalvar"
-            >
-              Registrar Operação
-            </button>
-
-          </form>
-
-        </div>
-
-
-        <!-- ===================================================
-             HISTÓRICO
-             =================================================== -->
-
-        <div class="card-historico p-4">
-
-          <div class="historico-titulo mb-3">
-
-            <div class="card-title-icon">
-              ◷
-            </div>
-
-            <span>
-              Últimos Registros
-            </span>
-
-          </div>
-
-
-          <div
-            id="listaHistorico"
-            class="list-group list-group-flush"
-          >
-
-            <div
-              class="list-group-item text-center text-muted py-3 small"
-              id="historicoVazio"
-            >
-              Carregando histórico...
-            </div>
-
-          </div>
-
-        </div>
+        <button
+          type="button"
+          class="menu-btn"
+          id="btnMenuHistorico"
+        >
+          ◷ &nbsp; Histórico
+        </button>
 
       </div>
 
+    </div>
 
-      <!-- =====================================================
-           COLUNA DIREITA
-           ===================================================== -->
 
-      <div class="col-lg-8 col-md-7">
+    <!-- =====================================================
+         TELA ESTOQUE
+         ===================================================== -->
 
-        <div class="card-custom p-3 p-lg-4">
+    <section
+      id="telaEstoque"
+      class="tela ativa"
+    >
 
-          <!-- CABEÇALHO -->
+      <div class="row g-4">
 
-          <div class="estoque-header">
+        <!-- ===================================================
+             COLUNA ESQUERDA
+             =================================================== -->
 
-            <div>
+        <div class="col-lg-4 col-md-5">
 
-              <div class="estoque-titulo">
+          <!-- ===============================================
+               NOVA MOVIMENTAÇÃO
+               =============================================== -->
 
-                <div class="icone-estoque">
-                  ▦
-                </div>
+          <div class="card-custom p-4 mb-4">
 
-                <div>
+            <div class="card-title-custom mb-4">
 
-                  <div>
-                    Estoque de Materiais
+              <div class="card-title-icon">
+                ⇄
+              </div>
+
+              <span>
+                Nova Movimentação
+              </span>
+
+            </div>
+
+
+            <form id="formMovimento">
+
+              <!-- TIPO -->
+
+              <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                  Tipo de Movimento
+                </label>
+
+                <select
+                  class="form-select"
+                  id="tipo"
+                  required
+                >
+
+                  <option value="Entrada">
+                    Entrada
+                  </option>
+
+                  <option value="Saída">
+                    Saída
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- MATERIAL -->
+
+              <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                  Material
+                </label>
+
+                <select
+                  class="form-select"
+                  id="selectMaterial"
+                  required
+                >
+
+                  <option value="">
+                    Carregando materiais...
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- QUANTIDADE -->
+
+              <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                  Quantidade
+                </label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="quantidade"
+                  required
+                  min="1"
+                  step="1"
+                  placeholder="Digite a quantidade"
+                >
+
+              </div>
+
+
+              <!-- RESPONSÁVEL -->
+
+              <div class="mb-4">
+
+                <label class="form-label fw-bold">
+                  Responsável
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="responsavel"
+                  required
+                  placeholder="Seu nome"
+                >
+
+              </div>
+
+
+              <!-- BOTÃO -->
+
+              <button
+                type="submit"
+                class="w-100 btn btn-registrar btn-lg"
+                id="btnSalvar"
+              >
+                Registrar Operação
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- ===============================================
+               ÚLTIMOS REGISTROS
+               =============================================== -->
+
+          <div class="card-historico p-4">
+
+            <div class="historico-titulo mb-3">
+
+              <div class="card-title-icon">
+                ◷
+              </div>
+
+              <span>
+                Últimos Registros
+              </span>
+
+            </div>
+
+
+            <div
+              id="listaHistorico"
+              class="list-group list-group-flush"
+            >
+
+              <div
+                class="list-group-item text-center text-muted py-3 small"
+              >
+                Carregando histórico...
+              </div>
+
+            </div>
+
+
+            <div class="text-center mt-3">
+
+              <button
+                type="button"
+                class="btn btn-sm btn-link text-decoration-none fw-semibold"
+                id="btnVerHistorico"
+              >
+                Ver histórico completo →
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             COLUNA DIREITA
+             =================================================== -->
+
+        <div class="col-lg-8 col-md-7">
+
+          <div class="card-custom p-3 p-lg-4">
+
+            <!-- CABEÇALHO -->
+
+            <div class="estoque-header">
+
+              <div>
+
+                <div class="estoque-titulo">
+
+                  <div class="icone-estoque">
+                    ▦
                   </div>
 
-                  <div class="estoque-subtitulo">
-                    Posição atual dos materiais cadastrados
+                  <div>
+
+                    <div>
+                      Estoque de Materiais
+                    </div>
+
+                    <div class="estoque-subtitulo">
+                      Posição atual dos materiais cadastrados
+                    </div>
+
                   </div>
 
                 </div>
 
               </div>
 
+
+              <button
+                type="button"
+                class="btn btn-atualizar"
+                id="btnAtualizar"
+              >
+                ↻ &nbsp; Atualizar
+              </button>
+
             </div>
 
 
-            <button
-              type="button"
-              class="btn btn-atualizar"
-              id="btnAtualizar"
-            >
-              ↻ &nbsp; Atualizar
-            </button>
+            <!-- TABELA -->
 
-          </div>
+            <div class="table-container">
 
+              <div class="table-responsive">
 
-          <!-- TABELA -->
+                <table
+                  class="table table-bordered table-hover table-custom"
+                  id="tabelaEstoque"
+                >
 
-          <div class="table-container">
+                  <thead>
 
-            <div class="table-responsive">
+                    <tr>
 
-              <table
-                class="table table-bordered table-hover table-custom"
-                id="tabelaEstoque"
-              >
+                      <th>
+                        CÓDIGO
+                      </th>
 
-                <thead>
+                      <th>
+                        MATERIAL
+                      </th>
 
-                  <tr>
+                      <th>
+                        UNIDADE
+                      </th>
 
-                    <th>
-                      CÓDIGO
-                    </th>
+                      <th>
+                        ENTRADAS
+                      </th>
 
-                    <th>
-                      MATERIAL
-                    </th>
+                      <th>
+                        SAÍDAS
+                      </th>
 
-                    <th>
-                      UNIDADE
-                    </th>
+                      <th>
+                        ESTOQUE ATUAL
+                      </th>
 
-                    <th>
-                      ENTRADAS
-                    </th>
+                    </tr>
 
-                    <th>
-                      SAÍDAS
-                    </th>
-
-                    <th>
-                      ESTOQUE ATUAL
-                    </th>
-
-                  </tr>
-
-                </thead>
+                  </thead>
 
 
-                <tbody id="corpoTabela">
+                  <tbody id="corpoTabela">
 
-                  <tr>
+                    <tr>
 
-                    <td
-                      colspan="6"
-                      class="estado-tabela"
-                    >
-                      Carregando dados...
-                    </td>
+                      <td
+                        colspan="6"
+                        class="estado-tabela"
+                      >
+                        Carregando dados...
+                      </td>
 
-                  </tr>
+                    </tr>
 
-                </tbody>
+                  </tbody>
 
-              </table>
+                </table>
+
+              </div>
 
             </div>
 
@@ -1113,7 +1690,453 @@
 
       </div>
 
-    </div>
+    </section>
+
+
+    <!-- =====================================================
+         TELA HISTÓRICO COMPLETO
+         ===================================================== -->
+
+    <section
+      id="telaHistorico"
+      class="tela"
+    >
+
+      <!-- CABEÇALHO -->
+
+      <div class="historico-cabecalho">
+
+        <div class="historico-cabecalho-titulo">
+
+          <div class="icone-estoque">
+            ◷
+          </div>
+
+          <div>
+
+            <h2>
+              Histórico de Movimentações
+            </h2>
+
+            <p>
+              Consulte todos os registros realizados no estoque
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="btn btn-atualizar"
+          id="btnAtualizarHistorico"
+        >
+          ↻ &nbsp; Atualizar
+        </button>
+
+      </div>
+
+
+      <!-- ===================================================
+           RESUMO
+           =================================================== -->
+
+      <div class="row g-3 mb-4">
+
+        <!-- TOTAL -->
+
+        <div class="col-xl-3 col-md-6">
+
+          <div class="resumo-card">
+
+            <div
+              class="d-flex justify-content-between align-items-start"
+            >
+
+              <div>
+
+                <div class="resumo-label">
+                  Total de movimentações
+                </div>
+
+                <div
+                  class="resumo-valor"
+                  id="resumoTotal"
+                >
+                  0
+                </div>
+
+              </div>
+
+              <div class="resumo-icone">
+                ⇄
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENTRADAS -->
+
+        <div class="col-xl-3 col-md-6">
+
+          <div class="resumo-card resumo-entrada">
+
+            <div
+              class="d-flex justify-content-between align-items-start"
+            >
+
+              <div>
+
+                <div class="resumo-label">
+                  Entradas
+                </div>
+
+                <div
+                  class="resumo-valor"
+                  id="resumoEntradas"
+                >
+                  0
+                </div>
+
+              </div>
+
+              <div class="resumo-icone">
+                ↑
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SAÍDAS -->
+
+        <div class="col-xl-3 col-md-6">
+
+          <div class="resumo-card resumo-saida">
+
+            <div
+              class="d-flex justify-content-between align-items-start"
+            >
+
+              <div>
+
+                <div class="resumo-label">
+                  Saídas
+                </div>
+
+                <div
+                  class="resumo-valor"
+                  id="resumoSaidas"
+                >
+                  0
+                </div>
+
+              </div>
+
+              <div class="resumo-icone">
+                ↓
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUANTIDADE -->
+
+        <div class="col-xl-3 col-md-6">
+
+          <div class="resumo-card">
+
+            <div
+              class="d-flex justify-content-between align-items-start"
+            >
+
+              <div>
+
+                <div class="resumo-label">
+                  Quantidade movimentada
+                </div>
+
+                <div
+                  class="resumo-valor"
+                  id="resumoQuantidade"
+                >
+                  0
+                </div>
+
+              </div>
+
+              <div class="resumo-icone">
+                # 
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           FILTROS
+           =================================================== -->
+
+      <div class="filtros-card">
+
+        <div class="filtros-titulo">
+          🔎 Filtros de pesquisa
+        </div>
+
+
+        <div class="row g-3">
+
+          <!-- PESQUISA -->
+
+          <div class="col-lg-4 col-md-6">
+
+            <label class="form-label">
+              Pesquisa
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="filtroPesquisa"
+              placeholder="ID, código ou material..."
+            >
+
+          </div>
+
+
+          <!-- TIPO -->
+
+          <div class="col-lg-2 col-md-6">
+
+            <label class="form-label">
+              Tipo
+            </label>
+
+            <select
+              class="form-select"
+              id="filtroTipo"
+            >
+
+              <option value="">
+                Todos
+              </option>
+
+              <option value="Entrada">
+                Entrada
+              </option>
+
+              <option value="Saída">
+                Saída
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- RESPONSÁVEL -->
+
+          <div class="col-lg-3 col-md-6">
+
+            <label class="form-label">
+              Responsável
+            </label>
+
+            <select
+              class="form-select"
+              id="filtroResponsavel"
+            >
+
+              <option value="">
+                Todos
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- DATA INICIAL -->
+
+          <div class="col-lg-3 col-md-6">
+
+            <label class="form-label">
+              Data inicial
+            </label>
+
+            <input
+              type="date"
+              class="form-control"
+              id="filtroDataInicial"
+            >
+
+          </div>
+
+
+          <!-- DATA FINAL -->
+
+          <div class="col-lg-3 col-md-6">
+
+            <label class="form-label">
+              Data final
+            </label>
+
+            <input
+              type="date"
+              class="form-control"
+              id="filtroDataFinal"
+            >
+
+          </div>
+
+
+          <!-- BOTÕES -->
+
+          <div
+            class="col-lg-9 col-md-6 d-flex align-items-end gap-2"
+          >
+
+            <button
+              type="button"
+              class="btn btn-filtrar"
+              id="btnFiltrar"
+            >
+              🔍 Filtrar
+            </button>
+
+
+            <button
+              type="button"
+              class="btn btn-limpar"
+              id="btnLimparFiltros"
+            >
+              Limpar filtros
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           TABELA HISTÓRICO
+           =================================================== -->
+
+      <div class="card-custom p-3 p-lg-4">
+
+        <div class="tabela-historico-container">
+
+          <div class="tabela-historico-scroll">
+
+            <table
+              class="table table-bordered table-hover tabela-historico"
+            >
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    ID
+                  </th>
+
+                  <th>
+                    DATA/HORA
+                  </th>
+
+                  <th>
+                    TIPO
+                  </th>
+
+                  <th>
+                    CÓDIGO
+                  </th>
+
+                  <th>
+                    MATERIAL
+                  </th>
+
+                  <th>
+                    QUANTIDADE
+                  </th>
+
+                  <th>
+                    UNIDADE
+                  </th>
+
+                  <th>
+                    RESPONSÁVEL
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody
+                id="corpoHistorico"
+              >
+
+                <tr>
+
+                  <td
+                    colspan="8"
+                    class="estado-tabela"
+                  >
+                    Carregando histórico...
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <!-- PAGINAÇÃO -->
+
+          <div class="paginacao-container">
+
+            <div
+              class="paginacao-info"
+              id="paginacaoInfo"
+            >
+              Nenhum registro
+            </div>
+
+
+            <div id="paginacaoBotoes">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </div>
 
@@ -1268,7 +2291,7 @@
 
 
   <!-- =========================================================
-       BOOTSTRAP JAVASCRIPT
+       BOOTSTRAP
        ========================================================= -->
 
   <script
@@ -1277,37 +2300,37 @@
 
 
   <!-- =========================================================
-       JAVASCRIPT DO SISTEMA
+       JAVASCRIPT
        ========================================================= -->
 
   <script>
 
-    /*
-     * =========================================================
-     * URL DO GOOGLE APPS SCRIPT
-     * =========================================================
-     */
+    /* =========================================================
+       URL DO GOOGLE APPS SCRIPT
+       ========================================================= */
 
     const URL_APPS_SCRIPT =
-      "https://script.google.com/macros/s/AKfycbwDohgFXPrmtm9mTc7BKOUrjOPNRlqGOQgEsHyfycxZ_pO530O1WkunVXHQz9zBt1Iu/exec";
+      "https://script.google.com/macros/s/AKfycbyR_vDSIROZAGPJDdfXRwlQha4-F7h0sH6v9P_A-XVzQHK2QIcPK02quYp2CC-sz3zM/exec";
 
 
-    /*
-     * =========================================================
-     * VARIÁVEIS
-     * =========================================================
-     */
+    /* =========================================================
+       VARIÁVEIS
+       ========================================================= */
 
     let listaMateriais = [];
 
     let historico = [];
 
+    let historicoFiltrado = [];
 
-    /*
-     * =========================================================
-     * ESCAPAR HTML
-     * =========================================================
-     */
+    let paginaAtual = 1;
+
+    const REGISTROS_POR_PAGINA = 15;
+
+
+    /* =========================================================
+       ESCAPAR HTML
+       ========================================================= */
 
     function escaparHTML(texto) {
 
@@ -1320,6 +2343,7 @@
 
       }
 
+
       return String(texto)
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
@@ -1330,19 +2354,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * FORMATAR CÓDIGO DO MATERIAL
-     *
-     * Exemplo:
-     * 100110000001
-     *        ↓
-     * 100.110.000001
-     *
-     * A formatação é apenas visual.
-     * O valor original continua sendo enviado ao Apps Script.
-     * =========================================================
-     */
+    /* =========================================================
+       FORMATAR CÓDIGO
+       ========================================================= */
 
     function formatarCodigo(codigo) {
 
@@ -1350,11 +2364,6 @@
         String(codigo)
           .replace(/\D/g, "");
 
-
-      /*
-       * Códigos diferentes de 12 dígitos
-       * permanecem como estão.
-       */
 
       if (
         numero.length !== 12
@@ -1376,11 +2385,144 @@
     }
 
 
-    /*
-     * =========================================================
-     * MODAL DE SUCESSO
-     * =========================================================
-     */
+    /* =========================================================
+       FORMATAR NÚMERO
+       ========================================================= */
+
+    function formatarNumero(valor) {
+
+      const numero =
+        Number(valor) || 0;
+
+
+      if (
+        Number.isInteger(numero)
+      ) {
+
+        return numero.toLocaleString(
+          "pt-BR"
+        );
+
+      }
+
+
+      return numero.toLocaleString(
+        "pt-BR",
+        {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       FORMATAR DATA/HORA
+       ========================================================= */
+
+    function formatarDataHora(dataHora) {
+
+      if (!dataHora) {
+
+        return "";
+
+      }
+
+
+      const data =
+        new Date(dataHora);
+
+
+      if (
+        isNaN(
+          data.getTime()
+        )
+      ) {
+
+        return dataHora;
+
+      }
+
+
+      return data.toLocaleString(
+        "pt-BR",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       OBTER DATA PARA FILTRO
+       ========================================================= */
+
+    function obterDataLocal(dataHora) {
+
+      if (!dataHora) {
+
+        return "";
+
+      }
+
+
+      const data =
+        new Date(dataHora);
+
+
+      if (
+        isNaN(
+          data.getTime()
+        )
+      ) {
+
+        return "";
+
+      }
+
+
+      const ano =
+        data.getFullYear();
+
+
+      const mes =
+        String(
+          data.getMonth() + 1
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      const dia =
+        String(
+          data.getDate()
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      return (
+        ano +
+        "-" +
+        mes +
+        "-" +
+        dia
+      );
+
+    }
+
+
+    /* =========================================================
+       MODAL DE SUCESSO
+       ========================================================= */
 
     function mostrarSucesso(resultado) {
 
@@ -1497,11 +2639,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * MODAL DE ERRO / AVISO
-     * =========================================================
-     */
+    /* =========================================================
+       MODAL DE AVISO / ERRO
+       ========================================================= */
 
     function mostrarAviso(
       mensagem,
@@ -1600,11 +2740,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * CARREGAR DADOS
-     * =========================================================
-     */
+    /* =========================================================
+       CARREGAR DADOS PRINCIPAIS
+       ========================================================= */
 
     function carregarDados() {
 
@@ -1742,11 +2880,149 @@
     }
 
 
-    /*
-     * =========================================================
-     * PREENCHER SELECT DE MATERIAIS
-     * =========================================================
-     */
+    /* =========================================================
+       CARREGAR HISTÓRICO COMPLETO
+       ========================================================= */
+
+    function carregarHistoricoCompleto() {
+
+      return new Promise(
+        (resolve, reject) => {
+
+          const callbackName =
+            "callbackHistorico_" +
+            Date.now();
+
+
+          const script =
+            document.createElement(
+              "script"
+            );
+
+
+          const timeout =
+            setTimeout(
+              () => {
+
+                limpar();
+
+
+                reject(
+                  new Error(
+                    "Tempo limite excedido ao carregar o histórico."
+                  )
+                );
+
+              },
+              20000
+            );
+
+
+          function limpar() {
+
+            clearTimeout(
+              timeout
+            );
+
+
+            if (
+              script.parentNode
+            ) {
+
+              script.parentNode.removeChild(
+                script
+              );
+
+            }
+
+
+            delete window[
+              callbackName
+            ];
+
+          }
+
+
+          window[
+            callbackName
+          ] =
+            function(resposta) {
+
+              limpar();
+
+
+              if (!resposta) {
+
+                reject(
+                  new Error(
+                    "Resposta vazia do Google Apps Script."
+                  )
+                );
+
+                return;
+
+              }
+
+
+              if (
+                resposta.sucesso === false
+              ) {
+
+                reject(
+                  new Error(
+                    resposta.erro ||
+                    "Erro ao consultar o histórico."
+                  )
+                );
+
+                return;
+
+              }
+
+
+              resolve(
+                resposta.movimentacoes || []
+              );
+
+            };
+
+
+          script.onerror =
+            function() {
+
+              limpar();
+
+
+              reject(
+                new Error(
+                  "Não foi possível conectar ao Google Apps Script."
+                )
+              );
+
+            };
+
+
+          script.src =
+            URL_APPS_SCRIPT +
+            "?acao=historico&callback=" +
+            encodeURIComponent(
+              callbackName
+            );
+
+
+          document.body.appendChild(
+            script
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       PREENCHER MATERIAIS
+       ========================================================= */
 
     function preencherMateriais() {
 
@@ -1787,11 +3063,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * PREENCHER TABELA DE ESTOQUE
-     * =========================================================
-     */
+    /* =========================================================
+       PREENCHER TABELA DE ESTOQUE
+       ========================================================= */
 
     function preencherTabela() {
 
@@ -1884,9 +3158,7 @@
             <td class="text-center">
 
               <span class="estoque-atual">
-
                 ${formatarNumero(estoqueAtual)}
-
               </span>
 
             </td>
@@ -1904,45 +3176,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * FORMATAR NÚMEROS
-     * =========================================================
-     */
-
-    function formatarNumero(valor) {
-
-      const numero =
-        Number(valor) || 0;
-
-
-      if (
-        Number.isInteger(numero)
-      ) {
-
-        return numero.toLocaleString(
-          "pt-BR"
-        );
-
-      }
-
-
-      return numero.toLocaleString(
-        "pt-BR",
-        {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 2
-        }
-      );
-
-    }
-
-
-    /*
-     * =========================================================
-     * PREENCHER HISTÓRICO
-     * =========================================================
-     */
+    /* =========================================================
+       PREENCHER ÚLTIMOS REGISTROS
+       ========================================================= */
 
     function preencherHistorico() {
 
@@ -1990,7 +3226,7 @@
             );
 
 
-          const itemHtml = `
+          listaDiv.innerHTML += `
 
             <div
               class="list-group-item historico-item"
@@ -2039,68 +3275,1113 @@
 
           `;
 
-
-          listaDiv.innerHTML +=
-            itemHtml;
-
         }
       );
 
     }
 
 
-    /*
-     * =========================================================
-     * FORMATAR DATA/HORA
-     * =========================================================
-     */
+    /* =========================================================
+       PREENCHER RESPONSÁVEIS
+       ========================================================= */
 
-    function formatarDataHora(
-      dataHora
-    ) {
+    function preencherResponsaveis() {
 
-      if (!dataHora) {
+      const select =
+        document.getElementById(
+          "filtroResponsavel"
+        );
 
-        return "";
+
+      const atual =
+        select.value;
+
+
+      const responsaveis =
+        [
+          ...new Set(
+            historico
+              .map(
+                h =>
+                  String(
+                    h.responsavel || ""
+                  ).trim()
+              )
+              .filter(
+                nome => nome !== ""
+              )
+          )
+        ]
+        .sort(
+          (a, b) =>
+            a.localeCompare(
+              b,
+              "pt-BR"
+            )
+        );
+
+
+      select.innerHTML =
+        '<option value="">Todos</option>';
+
+
+      responsaveis.forEach(
+        (responsavel) => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+
+          option.value =
+            responsavel;
+
+
+          option.textContent =
+            responsavel;
+
+
+          select.appendChild(
+            option
+          );
+
+        }
+      );
+
+
+      if (
+        responsaveis.includes(
+          atual
+        )
+      ) {
+
+        select.value =
+          atual;
+
+      }
+
+    }
+
+
+    /* =========================================================
+       APLICAR FILTROS
+       ========================================================= */
+
+    function aplicarFiltros() {
+
+      const pesquisa =
+        document
+          .getElementById(
+            "filtroPesquisa"
+          )
+          .value
+          .trim()
+          .toLowerCase();
+
+
+      const tipo =
+        document
+          .getElementById(
+            "filtroTipo"
+          )
+          .value;
+
+
+      const responsavel =
+        document
+          .getElementById(
+            "filtroResponsavel"
+          )
+          .value;
+
+
+      const dataInicial =
+        document
+          .getElementById(
+            "filtroDataInicial"
+          )
+          .value;
+
+
+      const dataFinal =
+        document
+          .getElementById(
+            "filtroDataFinal"
+          )
+          .value;
+
+
+      historicoFiltrado =
+        historico.filter(
+          (h) => {
+
+            /* ---------------------------------------------
+               PESQUISA
+               --------------------------------------------- */
+
+            if (
+              pesquisa
+            ) {
+
+              const texto =
+                [
+                  h.id,
+                  h.codigo,
+                  formatarCodigo(h.codigo),
+                  h.material,
+                  h.responsavel
+                ]
+                .join(" ")
+                .toLowerCase();
+
+
+              if (
+                !texto.includes(
+                  pesquisa
+                )
+              ) {
+
+                return false;
+
+              }
+
+            }
+
+
+            /* ---------------------------------------------
+               TIPO
+               --------------------------------------------- */
+
+            if (
+              tipo &&
+              h.tipo !== tipo
+            ) {
+
+              return false;
+
+            }
+
+
+            /* ---------------------------------------------
+               RESPONSÁVEL
+               --------------------------------------------- */
+
+            if (
+              responsavel &&
+              h.responsavel !== responsavel
+            ) {
+
+              return false;
+
+            }
+
+
+            /* ---------------------------------------------
+               DATA INICIAL
+               --------------------------------------------- */
+
+            const dataMovimentacao =
+              obterDataLocal(
+                h.dataHora
+              );
+
+
+            if (
+              dataInicial &&
+              dataMovimentacao <
+              dataInicial
+            ) {
+
+              return false;
+
+            }
+
+
+            /* ---------------------------------------------
+               DATA FINAL
+               --------------------------------------------- */
+
+            if (
+              dataFinal &&
+              dataMovimentacao >
+              dataFinal
+            ) {
+
+              return false;
+
+            }
+
+
+            return true;
+
+          }
+        );
+
+
+      paginaAtual = 1;
+
+
+      atualizarResumo();
+
+      renderizarTabelaHistorico();
+
+    }
+
+
+    /* =========================================================
+       ATUALIZAR RESUMO
+       ========================================================= */
+
+    function atualizarResumo() {
+
+      const total =
+        historicoFiltrado.length;
+
+
+      const entradas =
+        historicoFiltrado.filter(
+          h =>
+            h.tipo === "Entrada"
+        ).length;
+
+
+      const saidas =
+        historicoFiltrado.filter(
+          h =>
+            h.tipo === "Saída"
+        ).length;
+
+
+      const quantidade =
+        historicoFiltrado.reduce(
+          (
+            total,
+            h
+          ) =>
+            total +
+            (
+              Number(
+                h.quantidade
+              ) || 0
+            ),
+          0
+        );
+
+
+      document.getElementById(
+        "resumoTotal"
+      ).innerText =
+        formatarNumero(total);
+
+
+      document.getElementById(
+        "resumoEntradas"
+      ).innerText =
+        formatarNumero(entradas);
+
+
+      document.getElementById(
+        "resumoSaidas"
+      ).innerText =
+        formatarNumero(saidas);
+
+
+      document.getElementById(
+        "resumoQuantidade"
+      ).innerText =
+        formatarNumero(
+          quantidade
+        );
+
+    }
+
+
+    /* =========================================================
+       RENDERIZAR TABELA HISTÓRICO
+       ========================================================= */
+
+    function renderizarTabelaHistorico() {
+
+      const corpo =
+        document.getElementById(
+          "corpoHistorico"
+        );
+
+
+      corpo.innerHTML =
+        "";
+
+
+      if (
+        !historicoFiltrado.length
+      ) {
+
+        corpo.innerHTML = `
+
+          <tr>
+
+            <td
+              colspan="8"
+              class="estado-tabela"
+            >
+              Nenhuma movimentação encontrada
+              com os filtros selecionados.
+            </td>
+
+          </tr>
+
+        `;
+
+
+        atualizarPaginacao();
+
+        return;
 
       }
 
 
-      const data =
-        new Date(
-          dataHora
+      const inicio =
+        (
+          paginaAtual - 1
+        ) *
+        REGISTROS_POR_PAGINA;
+
+
+      const fim =
+        inicio +
+        REGISTROS_POR_PAGINA;
+
+
+      const registros =
+        historicoFiltrado.slice(
+          inicio,
+          fim
+        );
+
+
+      registros.forEach(
+        (h) => {
+
+          const tr =
+            document.createElement(
+              "tr"
+            );
+
+
+          const classeTipo =
+            h.tipo === "Entrada"
+              ? "badge-historico-entrada"
+              : "badge-historico-saida";
+
+
+          const classeQuantidade =
+            h.tipo === "Entrada"
+              ? "quantidade-entrada"
+              : "quantidade-saida";
+
+
+          tr.innerHTML = `
+
+            <td class="text-center">
+
+              <span class="id-movimentacao">
+
+                ${escaparHTML(h.id)}
+
+              </span>
+
+            </td>
+
+
+            <td class="text-center">
+
+              ${escaparHTML(
+                formatarDataHora(
+                  h.dataHora
+                )
+              )}
+
+            </td>
+
+
+            <td class="text-center">
+
+              <span class="${classeTipo}">
+
+                ${escaparHTML(h.tipo)}
+
+              </span>
+
+            </td>
+
+
+            <td class="text-center">
+
+              <span class="codigo-historico">
+
+                ${escaparHTML(
+                  formatarCodigo(
+                    h.codigo
+                  )
+                )}
+
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span class="fw-semibold">
+
+                ${escaparHTML(
+                  h.material
+                )}
+
+              </span>
+
+            </td>
+
+
+            <td class="text-center">
+
+              <span class="${classeQuantidade}">
+
+                ${formatarNumero(
+                  h.quantidade
+                )}
+
+              </span>
+
+            </td>
+
+
+            <td class="text-center">
+
+              ${escaparHTML(
+                obterUnidadeMaterial(
+                  h.codigo,
+                  h.material
+                )
+              )}
+
+            </td>
+
+
+            <td>
+
+              ${escaparHTML(
+                h.responsavel
+              )}
+
+            </td>
+
+          `;
+
+
+          corpo.appendChild(
+            tr
+          );
+
+        }
+      );
+
+
+      atualizarPaginacao();
+
+    }
+
+
+    /* =========================================================
+       OBTER UNIDADE DO MATERIAL
+       ========================================================= */
+
+    function obterUnidadeMaterial(
+      codigo,
+      material
+    ) {
+
+      const item =
+        listaMateriais.find(
+          (m) => {
+
+            const codigoMaterial =
+              String(
+                m.codigo
+              );
+
+
+            const codigoHistorico =
+              String(
+                codigo
+              );
+
+
+            return (
+              codigoMaterial ===
+              codigoHistorico
+            ) &&
+            (
+              String(
+                m.material
+              ) ===
+              String(
+                material
+              )
+            );
+
+          }
+        );
+
+
+      if (item) {
+
+        return item.unidade || "";
+
+      }
+
+
+      /*
+       * Caso o material não seja mais encontrado
+       * na aba base, deixamos vazio.
+       */
+
+      return "";
+
+    }
+
+
+    /* =========================================================
+       PAGINAÇÃO
+       ========================================================= */
+
+    function atualizarPaginacao() {
+
+      const total =
+        historicoFiltrado.length;
+
+
+      const totalPaginas =
+        Math.max(
+          1,
+          Math.ceil(
+            total /
+            REGISTROS_POR_PAGINA
+          )
+        );
+
+
+      const inicio =
+        total === 0
+          ? 0
+          : (
+              (
+                paginaAtual - 1
+              ) *
+              REGISTROS_POR_PAGINA
+            ) + 1;
+
+
+      const fim =
+        Math.min(
+          paginaAtual *
+          REGISTROS_POR_PAGINA,
+          total
+        );
+
+
+      document.getElementById(
+        "paginacaoInfo"
+      ).innerText =
+        total === 0
+          ? "Nenhum registro"
+          : `${inicio}–${fim} de ${formatarNumero(total)} registros`;
+
+
+      const container =
+        document.getElementById(
+          "paginacaoBotoes"
+        );
+
+
+      container.innerHTML =
+        "";
+
+
+      if (
+        totalPaginas <= 1
+      ) {
+
+        return;
+
+      }
+
+
+      const btnAnterior =
+        document.createElement(
+          "button"
+        );
+
+
+      btnAnterior.type =
+        "button";
+
+
+      btnAnterior.className =
+        "btn-pagina";
+
+
+      btnAnterior.innerText =
+        "‹";
+
+
+      btnAnterior.disabled =
+        paginaAtual <= 1;
+
+
+      btnAnterior.addEventListener(
+        "click",
+        () => {
+
+          if (
+            paginaAtual > 1
+          ) {
+
+            paginaAtual--;
+
+            renderizarTabelaHistorico();
+
+          }
+
+        }
+      );
+
+
+      container.appendChild(
+        btnAnterior
+      );
+
+
+      let inicioPagina =
+        Math.max(
+          1,
+          paginaAtual - 2
+        );
+
+
+      let fimPagina =
+        Math.min(
+          totalPaginas,
+          paginaAtual + 2
         );
 
 
       if (
-        isNaN(
-          data.getTime()
-        )
+        paginaAtual <= 2
       ) {
 
-        return dataHora;
+        fimPagina =
+          Math.min(
+            totalPaginas,
+            5
+          );
 
       }
 
 
-      return data.toLocaleString(
-        "pt-BR",
-        {
-          day: "2-digit",
-          month: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit"
+      if (
+        paginaAtual >=
+        totalPaginas - 1
+      ) {
+
+        inicioPagina =
+          Math.max(
+            1,
+            totalPaginas - 4
+          );
+
+      }
+
+
+      for (
+        let pagina =
+          inicioPagina;
+        pagina <= fimPagina;
+        pagina++
+      ) {
+
+        const botao =
+          document.createElement(
+            "button"
+          );
+
+
+        botao.type =
+          "button";
+
+
+        botao.className =
+          "btn-pagina" +
+          (
+            pagina === paginaAtual
+              ? " ativo"
+              : ""
+          );
+
+
+        botao.innerText =
+          pagina;
+
+
+        botao.addEventListener(
+          "click",
+          () => {
+
+            paginaAtual =
+              pagina;
+
+
+            renderizarTabelaHistorico();
+
+          }
+        );
+
+
+        container.appendChild(
+          botao
+        );
+
+      }
+
+
+      const btnProxima =
+        document.createElement(
+          "button"
+        );
+
+
+      btnProxima.type =
+        "button";
+
+
+      btnProxima.className =
+        "btn-pagina";
+
+
+      btnProxima.innerText =
+        "›";
+
+
+      btnProxima.disabled =
+        paginaAtual >=
+        totalPaginas;
+
+
+      btnProxima.addEventListener(
+        "click",
+        () => {
+
+          if (
+            paginaAtual <
+            totalPaginas
+          ) {
+
+            paginaAtual++;
+
+            renderizarTabelaHistorico();
+
+          }
+
         }
+      );
+
+
+      container.appendChild(
+        btnProxima
       );
 
     }
 
 
-    /*
-     * =========================================================
-     * ATUALIZAR INTERFACE
-     * =========================================================
-     */
+    /* =========================================================
+       ABRIR TELA
+       ========================================================= */
+
+    function abrirTela(
+      tela
+    ) {
+
+      const telaEstoque =
+        document.getElementById(
+          "telaEstoque"
+        );
+
+
+      const telaHistorico =
+        document.getElementById(
+          "telaHistorico"
+        );
+
+
+      const btnEstoque =
+        document.getElementById(
+          "btnMenuEstoque"
+        );
+
+
+      const btnHistorico =
+        document.getElementById(
+          "btnMenuHistorico"
+        );
+
+
+      if (
+        tela === "estoque"
+      ) {
+
+        telaEstoque.classList.add(
+          "ativa"
+        );
+
+
+        telaHistorico.classList.remove(
+          "ativa"
+        );
+
+
+        btnEstoque.classList.add(
+          "active"
+        );
+
+
+        btnHistorico.classList.remove(
+          "active"
+        );
+
+      } else {
+
+        telaEstoque.classList.remove(
+          "ativa"
+        );
+
+
+        telaHistorico.classList.add(
+          "ativa"
+        );
+
+
+        btnEstoque.classList.remove(
+          "active"
+        );
+
+
+        btnHistorico.classList.add(
+          "active"
+        );
+
+
+        carregarTelaHistorico();
+
+      }
+
+    }
+
+
+    /* =========================================================
+       CARREGAR TELA DE HISTÓRICO
+       ========================================================= */
+
+    async function carregarTelaHistorico() {
+
+      const corpo =
+        document.getElementById(
+          "corpoHistorico"
+        );
+
+
+      /*
+       * Se já temos o histórico completo carregado,
+       * podemos apenas reaplicar os filtros.
+       */
+
+      try {
+
+        corpo.innerHTML = `
+
+          <tr>
+
+            <td
+              colspan="8"
+              class="estado-tabela"
+            >
+              Carregando histórico completo...
+            </td>
+
+          </tr>
+
+        `;
+
+
+        historico =
+          await carregarHistoricoCompleto();
+
+
+        preencherResponsaveis();
+
+
+        aplicarFiltros();
+
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao carregar histórico:",
+          erro
+        );
+
+
+        corpo.innerHTML = `
+
+          <tr>
+
+            <td
+              colspan="8"
+              class="text-center text-danger py-4"
+            >
+
+              Erro ao carregar o histórico.
+
+              <br>
+
+              <small>
+                ${escaparHTML(
+                  erro.message
+                )}
+              </small>
+
+            </td>
+
+          </tr>
+
+        `;
+
+
+        document.getElementById(
+          "paginacaoInfo"
+        ).innerText =
+          "Erro ao carregar";
+
+
+        document.getElementById(
+          "paginacaoBotoes"
+        ).innerHTML =
+          "";
+
+
+        mostrarAviso(
+          "Não foi possível carregar o histórico: " +
+          erro.message,
+          "danger"
+        );
+
+      }
+
+    }
+
+
+    /* =========================================================
+       LIMPAR FILTROS
+       ========================================================= */
+
+    function limparFiltros() {
+
+      document.getElementById(
+        "filtroPesquisa"
+      ).value =
+        "";
+
+
+      document.getElementById(
+        "filtroTipo"
+      ).value =
+        "";
+
+
+      document.getElementById(
+        "filtroResponsavel"
+      ).value =
+        "";
+
+
+      document.getElementById(
+        "filtroDataInicial"
+      ).value =
+        "";
+
+
+      document.getElementById(
+        "filtroDataFinal"
+      ).value =
+        "";
+
+
+      aplicarFiltros();
+
+    }
+
+
+    /* =========================================================
+       REGISTRAR MOVIMENTAÇÃO
+       ========================================================= */
+
+    async function registrarMovimentacao(
+      dados
+    ) {
+
+      const resposta =
+        await fetch(
+          URL_APPS_SCRIPT,
+          {
+            method: "POST",
+
+            redirect: "follow",
+
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify(
+                dados
+              )
+          }
+        );
+
+
+      if (!resposta.ok) {
+
+        throw new Error(
+          "Erro HTTP " +
+          resposta.status
+        );
+
+      }
+
+
+      const resultado =
+        await resposta.json();
+
+
+      return resultado;
+
+    }
+
+
+    /* =========================================================
+       ATUALIZAR INTERFACE
+       ========================================================= */
 
     async function atualizarTela() {
 
@@ -2176,61 +4457,9 @@
     }
 
 
-    /*
-     * =========================================================
-     * REGISTRAR MOVIMENTAÇÃO
-     * =========================================================
-     */
-
-    async function registrarMovimentacao(
-      dados
-    ) {
-
-      const resposta =
-        await fetch(
-          URL_APPS_SCRIPT,
-          {
-            method: "POST",
-
-            redirect: "follow",
-
-            headers: {
-              "Content-Type":
-                "text/plain;charset=utf-8"
-            },
-
-            body:
-              JSON.stringify(
-                dados
-              )
-          }
-        );
-
-
-      if (!resposta.ok) {
-
-        throw new Error(
-          "Erro HTTP " +
-          resposta.status
-        );
-
-      }
-
-
-      const resultado =
-        await resposta.json();
-
-
-      return resultado;
-
-    }
-
-
-    /*
-     * =========================================================
-     * SUBMIT DO FORMULÁRIO
-     * =========================================================
-     */
+    /* =========================================================
+       SUBMIT DO FORMULÁRIO
+       ========================================================= */
 
     document
       .getElementById(
@@ -2410,6 +4639,12 @@
             await atualizarTela();
 
 
+            /*
+             * Se a tela de histórico já tiver sido
+             * utilizada, o próximo acesso buscará
+             * novamente os dados completos.
+             */
+
             mostrarSucesso(
               resultado
             );
@@ -2445,11 +4680,9 @@
       );
 
 
-    /*
-     * =========================================================
-     * BOTÃO ATUALIZAR
-     * =========================================================
-     */
+    /* =========================================================
+       BOTÃO ATUALIZAR ESTOQUE
+       ========================================================= */
 
     document
       .getElementById(
@@ -2491,11 +4724,167 @@
       );
 
 
-    /*
-     * =========================================================
-     * INICIALIZAÇÃO
-     * =========================================================
-     */
+    /* =========================================================
+       BOTÃO MENU ESTOQUE
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnMenuEstoque"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          abrirTela(
+            "estoque"
+          );
+
+        }
+      );
+
+
+    /* =========================================================
+       BOTÃO MENU HISTÓRICO
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnMenuHistorico"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          abrirTela(
+            "historico"
+          );
+
+        }
+      );
+
+
+    /* =========================================================
+       BOTÃO VER HISTÓRICO
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnVerHistorico"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          abrirTela(
+            "historico"
+          );
+
+        }
+      );
+
+
+    /* =========================================================
+       BOTÃO ATUALIZAR HISTÓRICO
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnAtualizarHistorico"
+      )
+      .addEventListener(
+        "click",
+        async function() {
+
+          const btn =
+            this;
+
+
+          btn.disabled =
+            true;
+
+
+          btn.innerHTML =
+            "Atualizando...";
+
+
+          try {
+
+            await carregarTelaHistorico();
+
+
+          } finally {
+
+            btn.disabled =
+              false;
+
+
+            btn.innerHTML =
+              "↻ &nbsp; Atualizar";
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       BOTÃO FILTRAR
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnFiltrar"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          aplicarFiltros();
+
+        }
+      );
+
+
+    /* =========================================================
+       BOTÃO LIMPAR FILTROS
+       ========================================================= */
+
+    document
+      .getElementById(
+        "btnLimparFiltros"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          limparFiltros();
+
+        }
+      );
+
+
+    /* =========================================================
+       PESQUISA EM TEMPO REAL
+       ========================================================= */
+
+    document
+      .getElementById(
+        "filtroPesquisa"
+      )
+      .addEventListener(
+        "input",
+        function() {
+
+          aplicarFiltros();
+
+        }
+      );
+
+
+    /* =========================================================
+       INICIALIZAÇÃO
+       ========================================================= */
 
     document.addEventListener(
       "DOMContentLoaded",
