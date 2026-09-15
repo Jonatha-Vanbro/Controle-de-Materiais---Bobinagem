@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controle de Materiais - Bobinagem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-5" style="max-width: 600px;">
+    <div class="card shadow-sm p-4">
+      <h3 class="mb-4 text-primary text-center">Controle de Materiais - Bobinagem</h3>
+      
+      <form id="formMovimento">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Tipo de Movimento</label>
+          <select class="form-select" id="tipo" required>
+            <option value="Entrada">Entrada</option>
+            <option value="Saída">Saída</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label class="form-label fw-bold">Selecione o Material</label>
+          <select class="form-select" id="selectMaterial" required>
+            <option value="">Selecione um item...</option>
+            <option value="100.110.000.001" data-material="Fita isolante">100.110.000.001 - Fita isolante (Unidade)</option>
+            <option value="100.110.000.002" data-material="Fita autofusão">100.110.000.002 - Fita autofusão (Unidade)</option>
+            <option value="100.130.000.009" data-material="Fita crepe">100.130.000.009 - Fita crepe (Unidade)</option>
+            <option value="100.060.000.025" data-material="Estanho">100.060.000.025 - Estanho (Unidade)</option>
+            <option value="100.070.000.001" data-material="Fio 1,5mm² - Preto">100.070.000.001 - Fio 1,5mm² - Preto (Caixa)</option>
+            <option value="100.070.000.001" data-material="Fio 1,5mm² - Branco">100.070.000.001 - Fio 1,5mm² - Branco (Caixa)</option>
+            <option value="100.070.000.001" data-material="Fio 1,5mm² - Vermelho">100.070.000.001 - Fio 1,5mm² - Vermelho (Caixa)</option>
+            <option value="100.070.000.002" data-material="Fio 2,5mm² - Preto">100.070.000.002 - Fio 2,5mm² - Preto (Caixa)</option>
+            <option value="100.070.000.002" data-material="Fio 2,5mm² - Branco">100.070.000.002 - Fio 2,5mm² - Branco (Caixa)</option>
+            <option value="100.070.000.002" data-material="Fio 2,5mm² - Vermelho">100.070.000.002 - Fio 2,5mm² - Vermelho (Caixa)</option>
+            <option value="100.070.000.005" data-material="Fio 4,0mm² - Preto">100.070.000.005 - Fio 4,0mm² - Preto (Caixa)</option>
+            <option value="100.070.000.005" data-material="Fio 4,0mm² - Branco">100.070.000.005 - Fio 4,0mm² - Branco (Caixa)</option>
+            <option value="100.070.000.005" data-material="Fio 4,0mm² - Vermelho">100.070.000.005 - Fio 4,0mm² - Vermelho (Caixa)</option>
+            <option value="100.070.000.011" data-material="Fio 6,0mm² - Preto">100.070.000.011 - Fio 6,0mm² - Preto (Caixa)</option>
+            <option value="100.070.000.011" data-material="Fio 6,0mm² - Branco">100.070.000.011 - Fio 6,0mm² - Branco (Caixa)</option>
+            <option value="100.070.000.011" data-material="Fio 6,0mm² - Vermelho">100.070.000.011 - Fio 6,0mm² - Vermelho (Caixa)</option>
+            <option value="100.070.000.006" data-material="Fio 10,0mm² - Preto">100.070.000.006 - Fio 10,0mm² - Preto (Caixa)</option>
+            <option value="100.070.000.006" data-material="Fio 10,0mm² - Branco">100.070.000.006 - Fio 10,0mm² - Branco (Caixa)</option>
+            <option value="100.070.000.006" data-material="Fio 10,0mm² - Vermelho">100.070.000.006 - Fio 10,0mm² - Vermelho (Caixa)</option>
+            <option value="100.070.000.014" data-material="Cabo chato 3 x 2,5mm²">100.070.000.014 - Cabo chato 3 x 2,5mm² (Metros)</option>
+            <option value="100.070.000.015" data-material="Cabo chato 3 x 4,0mm²">100.070.000.015 - Cabo chato 3 x 4,0mm² (Metros)</option>
+            <option value="100.070.000.016" data-material="Cabo chato 3 x 6,0mm²">100.070.000.016 - Cabo chato 3 x 6,0mm² (Metros)</option>
+            <option value="100.070.000.017" data-material="Cabo chato 3 x 10,0mm²">100.070.000.017 - Cabo chato 3 x 10,0mm² (Metros)</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label class="form-label fw-bold">Quantidade</label>
+          <input type="number" class="form-control" id="quantidade" required min="0.01" step="any" placeholder="Digite a quantidade">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Responsável</label>
+          <input type="text" class="form-control" id="responsavel" required placeholder="Seu nome">
+        </div>
+        
+        <button type="submit" class="w-100 btn btn-primary btn-lg" id="btnSalvar">Registrar Operação</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzfFbUq4B8-lc_wAd1t26qsOUKuthnYZxxBRazFGExnHsB80q7fyc5UaAdrYT9r6jAP/exec";
+
+    document.getElementById('formMovimento').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      var selectMat = document.getElementById('selectMaterial');
+      var selectedOpt = selectMat.options[selectMat.selectedIndex];
+      
+      if (!selectMat.value) {
+        alert('Por favor, selecione um material.');
+        return;
+      }
+      
+      var btn = document.getElementById('btnSalvar');
+      btn.disabled = true;
+      btn.innerText = 'Salvando...';
+
+      var dados = {
+        tipo: document.getElementById('tipo').value,
+        codigo: selectMat.value,
+        material: selectedOpt.dataset.material,
+        quantidade: document.getElementById('quantidade').value,
+        responsavel: document.getElementById('responsavel').value
+      };
+
+      fetch(URL_APPS_SCRIPT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+      })
+      .then(response => {
+        alert('Movimentação registrada com sucesso na planilha!');
+        document.getElementById('formMovimento').reset();
+        btn.disabled = false;
+        btn.innerText = 'Registrar Operação';
+      })
+      .catch(err => {
+        alert('Erro ao registrar: ' + err);
+        btn.disabled = false;
+        btn.innerText = 'Registrar Operação';
+      });
+    });
+  </script>
+</body>
+</html>
