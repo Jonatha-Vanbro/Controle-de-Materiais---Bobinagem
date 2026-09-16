@@ -209,6 +209,67 @@
 
 
     /* =====================================================
+       LAYOUT DA TELA DE ESTOQUE
+       ===================================================== */
+
+    #telaEstoque .row {
+      align-items: stretch;
+    }
+
+
+    .coluna-estoque-esquerda {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .card-nova-movimentacao {
+      margin-bottom: 16px !important;
+    }
+
+
+    .card-ultimos-registros {
+      flex: 1;
+      min-height: 0;
+    }
+
+
+    .coluna-estoque-direita {
+      display: flex;
+    }
+
+
+    .card-estoque-materiais {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .card-estoque-materiais .table-container {
+      flex: 1;
+      min-height: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .card-estoque-materiais .table-responsive {
+      flex: 1;
+
+      max-height: none;
+
+      overflow-y: auto;
+    }
+
+
+    #listaHistorico {
+      overflow: hidden;
+    }
+
+
+    /* =====================================================
        CARDS
        ===================================================== */
 
@@ -1240,6 +1301,34 @@
         max-height: 60vh;
       }
 
+
+      /* Retorna o layout de estoque ao comportamento normal */
+
+      .coluna-estoque-esquerda,
+      .coluna-estoque-direita {
+        display: block;
+      }
+
+
+      .card-estoque-materiais {
+        display: block;
+      }
+
+
+      .card-estoque-materiais .table-container {
+        display: block;
+      }
+
+
+      .card-estoque-materiais .table-responsive {
+        max-height: 60vh;
+      }
+
+
+      .card-ultimos-registros {
+        min-height: auto;
+      }
+
     }
 
 
@@ -1386,11 +1475,15 @@
 
         <!-- COLUNA ESQUERDA -->
 
-        <div class="col-lg-4 col-md-5">
+        <div
+          class="col-lg-4 col-md-5 coluna-estoque-esquerda"
+        >
 
           <!-- NOVA MOVIMENTAÇÃO -->
 
-          <div class="card-custom p-4 mb-4">
+          <div
+            class="card-custom p-4 card-nova-movimentacao"
+          >
 
             <div class="card-title-custom mb-4">
 
@@ -1504,7 +1597,9 @@
 
           <!-- ÚLTIMOS REGISTROS -->
 
-          <div class="card-historico p-4">
+          <div
+            class="card-historico p-4 card-ultimos-registros"
+          >
 
             <div class="historico-titulo mb-3">
 
@@ -1552,9 +1647,13 @@
 
         <!-- COLUNA DIREITA -->
 
-        <div class="col-lg-8 col-md-7">
+        <div
+          class="col-lg-8 col-md-7 coluna-estoque-direita"
+        >
 
-          <div class="card-custom p-3 p-lg-4">
+          <div
+            class="card-custom p-3 p-lg-4 card-estoque-materiais"
+          >
 
             <div class="estoque-header">
 
@@ -3236,72 +3335,80 @@
       }
 
 
-      historico.forEach(
-        (h) => {
+      /*
+       * Exibe somente os 3 registros mais recentes.
+       * O histórico completo continua disponível
+       * na tela "Histórico".
+       */
 
-          const badgeClass =
-            h.tipo === "Entrada"
-              ? "badge-entrada"
-              : "badge-saida";
+      historico
+        .slice(0, 3)
+        .forEach(
+          (h) => {
+
+            const badgeClass =
+              h.tipo === "Entrada"
+                ? "badge-entrada"
+                : "badge-saida";
 
 
-          const dataHora =
-            formatarDataHora(
-              h.dataHora
-            );
+            const dataHora =
+              formatarDataHora(
+                h.dataHora
+              );
 
 
-          listaDiv.innerHTML += `
-
-            <div
-              class="list-group-item historico-item"
-            >
+            listaDiv.innerHTML += `
 
               <div
-                class="d-flex justify-content-between align-items-start gap-2"
+                class="list-group-item historico-item"
               >
 
-                <div>
+                <div
+                  class="d-flex justify-content-between align-items-start gap-2"
+                >
 
-                  <span
-                    class="badge ${badgeClass} me-1"
-                  >
-                    ${escaparHTML(h.tipo)}
-                  </span>
+                  <div>
 
-                  <span class="historico-material">
-                    ${escaparHTML(h.material)}
+                    <span
+                      class="badge ${badgeClass} me-1"
+                    >
+                      ${escaparHTML(h.tipo)}
+                    </span>
+
+                    <span class="historico-material">
+                      ${escaparHTML(h.material)}
+                    </span>
+
+                  </div>
+
+                  <span class="historico-data">
+                    ${dataHora}
                   </span>
 
                 </div>
 
-                <span class="historico-data">
-                  ${dataHora}
-                </span>
+
+                <div class="historico-info">
+
+                  Qtd:
+                  <b>
+                    ${formatarNumero(h.quantidade)}
+                  </b>
+
+                  &nbsp;•&nbsp;
+
+                  Responsável:
+                  ${escaparHTML(h.responsavel)}
+
+                </div>
 
               </div>
 
+            `;
 
-              <div class="historico-info">
-
-                Qtd:
-                <b>
-                  ${formatarNumero(h.quantidade)}
-                </b>
-
-                &nbsp;•&nbsp;
-
-                Responsável:
-                ${escaparHTML(h.responsavel)}
-
-              </div>
-
-            </div>
-
-          `;
-
-        }
-      );
+          }
+        );
 
     }
 
