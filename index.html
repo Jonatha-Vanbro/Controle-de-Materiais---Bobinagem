@@ -171,4 +171,1449 @@
        ===================================================== */
     .btn-registrar {
       min-height: 48px; border: none; border-radius: 8px;
-      background: linear-gradient(135deg,
+      background: linear-gradient(135deg, #1b4079, #245596);
+      color: white; font-weight: 700;
+      box-shadow: 0 3px 7px rgba(27, 64, 121, 0.20);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn-registrar:hover {
+      background: linear-gradient(135deg, #153461, #1b4079);
+      color: white; transform: translateY(-1px);
+      box-shadow: 0 5px 12px rgba(27, 64, 121, 0.25);
+    }
+    .btn-registrar:active { transform: translateY(0); }
+
+    /* =====================================================
+       HISTÓRICO RESUMIDO
+       ===================================================== */
+    .card-historico {
+      background-color: var(--branco);
+      border: 1px solid rgba(0, 0, 0, 0.035);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-card);
+    }
+    .historico-titulo {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 1rem; font-weight: 700; color: var(--texto);
+    }
+    .historico-item {
+      border: none !important;
+      border-bottom: 1px solid #edf0f2 !important;
+      padding: 13px 4px !important;
+      background-color: transparent;
+    }
+    .historico-item:last-child { border-bottom: none !important; }
+    .historico-material { font-weight: 600; font-size: 0.83rem; color: #343a40; }
+    .historico-info { color: var(--texto-secundario); font-size: 0.74rem; margin-top: 4px; }
+    .historico-data { color: #8a939b; font-size: 0.7rem; white-space: nowrap; }
+    .badge-entrada { background-color: #198754; font-size: 0.68rem; padding: 5px 8px; border-radius: 6px; }
+    .badge-saida { background-color: #dc3545; font-size: 0.68rem; padding: 5px 8px; border-radius: 6px; }
+
+    /* =====================================================
+       CABEÇALHO ESTOQUE
+       ===================================================== */
+    .estoque-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 15px; margin-bottom: 16px;
+    }
+    .estoque-titulo { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; margin: 0; }
+    .estoque-subtitulo { color: var(--texto-secundario); font-size: 0.75rem; margin-top: 2px; }
+    .icone-estoque {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background-color: var(--azul-claro); color: var(--azul-principal); border-radius: 9px;
+    }
+
+    /* =====================================================
+       BOTÃO ATUALIZAR
+       ===================================================== */
+    .btn-atualizar {
+      border: 1px solid #ccd5df; color: var(--azul-principal); background-color: white;
+      border-radius: 7px; font-size: 0.78rem; font-weight: 600; padding: 7px 12px;
+      transition: all 0.2s ease;
+    }
+    .btn-atualizar:hover { background-color: var(--azul-claro); border-color: #b8c7d8; color: var(--azul-hover); }
+
+    /* =====================================================
+       TABELA ESTOQUE
+       ===================================================== */
+    .table-container { border: 1px solid var(--borda); border-radius: 9px; overflow: hidden; background-color: white; }
+    .table-responsive { max-height: 70vh; overflow-y: auto; }
+    .table-custom { margin-bottom: 0 !important; }
+    .table-custom th {
+      background: linear-gradient(180deg, #1b4079, #173868);
+      color: white; text-align: center; vertical-align: middle;
+      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;
+      padding: 11px 10px; border-color: rgba(255, 255, 255, 0.12);
+    }
+    .table-custom td {
+      vertical-align: middle; font-size: 0.79rem; padding: 10px 9px;
+      border-color: #edf0f2; color: #343a40;
+    }
+    .table-custom tbody tr { transition: background-color 0.15s ease; }
+    .table-custom tbody tr:hover { background-color: #f7f9fb; }
+    .table-custom thead th { position: sticky; top: 0; z-index: 2; }
+
+    /* =====================================================
+       ESTOQUE ATUAL
+       ===================================================== */
+    .estoque-atual {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 48px; padding: 5px 9px; border-radius: 6px;
+      background-color: #edf5f0; color: #146c43; font-weight: 700;
+    }
+    .estoque-negativo .estoque-atual { background-color: #f8d7da; color: #842029; }
+    .estoque-negativo { background-color: #fff0f1 !important; color: #842029; }
+
+    /* =====================================================
+       HISTÓRICO COMPLETO
+       ===================================================== */
+    .historico-cabecalho {
+      display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 20px;
+    }
+    .historico-cabecalho-titulo { display: flex; align-items: center; gap: 11px; }
+    .historico-cabecalho-titulo h2 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+    .historico-cabecalho-titulo p { margin: 2px 0 0; color: var(--texto-secundario); font-size: 0.76rem; }
+
+    /* =====================================================
+       CARDS DE RESUMO
+       ===================================================== */
+    .resumo-card {
+      background-color: white; border: 1px solid rgba(0, 0, 0, 0.035);
+      border-radius: 10px; box-shadow: var(--sombra-card); padding: 17px; height: 100%;
+    }
+    .resumo-card .resumo-label { color: var(--texto-secundario); font-size: 0.73rem; font-weight: 600; margin-bottom: 5px; }
+    .resumo-card .resumo-valor { font-size: 1.45rem; font-weight: 700; color: var(--texto); }
+    .resumo-icone {
+      width: 38px; height: 38px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      background-color: var(--azul-claro); color: var(--azul-principal); font-size: 1rem;
+    }
+    .resumo-entrada .resumo-icone { background-color: #e8f5ee; color: #198754; }
+    .resumo-saida .resumo-icone { background-color: #fbe9eb; color: #dc3545; }
+
+    /* =====================================================
+       FILTROS DO HISTÓRICO
+       ===================================================== */
+    .filtros-card {
+      background-color: white; border: 1px solid rgba(0, 0, 0, 0.035);
+      border-radius: 10px; box-shadow: var(--sombra-card); padding: 18px; margin-bottom: 18px;
+    }
+    .filtros-titulo { font-size: 0.84rem; font-weight: 700; margin-bottom: 13px; color: var(--texto); }
+    .btn-filtrar {
+      min-height: 44px; background: linear-gradient(135deg, #1b4079, #245596);
+      color: white; border: none; border-radius: 8px; font-size: 0.82rem; font-weight: 600; padding: 0 18px;
+    }
+    .btn-filtrar:hover { color: white; background: linear-gradient(135deg, #153461, #1b4079); }
+    .btn-limpar {
+      min-height: 44px; background-color: white; color: #5f6b76;
+      border: 1px solid #ccd5df; border-radius: 8px; font-size: 0.82rem; font-weight: 600; padding: 0 18px;
+    }
+    .btn-limpar:hover { background-color: #f4f6f8; color: var(--azul-principal); }
+
+    /* =====================================================
+       TABELA HISTÓRICO
+       ===================================================== */
+    .tabela-historico-container { border: 1px solid var(--borda); border-radius: 9px; overflow: hidden; background-color: white; }
+    .tabela-historico-scroll { max-height: 62vh; overflow: auto; }
+    .tabela-historico { margin-bottom: 0 !important; min-width: 900px; }
+    .tabela-historico th {
+      position: sticky; top: 0; z-index: 3;
+      background: linear-gradient(180deg, #1b4079, #173868);
+      color: white; font-size: 0.74rem; font-weight: 600; text-align: center; white-space: nowrap;
+      padding: 11px 9px; border-color: rgba(255, 255, 255, 0.12);
+    }
+    .tabela-historico td {
+      font-size: 0.76rem; padding: 10px 9px; vertical-align: middle;
+      border-color: #edf0f2; white-space: nowrap;
+    }
+    .tabela-historico tbody tr:hover { background-color: #f7f9fb; }
+    .id-movimentacao { font-weight: 700; color: var(--azul-principal); font-size: 0.74rem; }
+    .codigo-historico { font-family: "Segoe UI", Arial, sans-serif; font-weight: 600; }
+    .badge-historico-entrada {
+      background-color: #e8f5ee; color: #146c43; border-radius: 6px; padding: 5px 8px;
+      font-size: 0.67rem; font-weight: 700;
+    }
+    .badge-historico-saida {
+      background-color: #fbe9eb; color: #b02a37; border-radius: 6px; padding: 5px 8px;
+      font-size: 0.67rem; font-weight: 700;
+    }
+    .quantidade-entrada { color: #198754; font-weight: 700; }
+    .quantidade-saida { color: #dc3545; font-weight: 700; }
+
+    /* =====================================================
+       PAGINAÇÃO
+       ===================================================== */
+    .paginacao-container { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-top: 15px; }
+    .paginacao-info { color: var(--texto-secundario); font-size: 0.74rem; }
+    .btn-pagina {
+      border: 1px solid #ccd5df; background-color: white; color: var(--azul-principal);
+      min-width: 36px; height: 34px; border-radius: 7px; font-size: 0.75rem; font-weight: 600; margin-left: 4px;
+    }
+    .btn-pagina:hover { background-color: var(--azul-claro); }
+    .btn-pagina.ativo { background-color: var(--azul-principal); color: white; border-color: var(--azul-principal); }
+    .btn-pagina:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    /* =====================================================
+       ESTADOS
+       ===================================================== */
+    .estado-tabela { padding: 30px 15px !important; color: #8a939b; text-align: center; }
+
+    /* =====================================================
+       MODAL
+       ===================================================== */
+    .modal-confirmacao .modal-content {
+      border: none; border-radius: 14px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18); overflow: hidden;
+    }
+    .modal-confirmacao .modal-header { border-bottom: 0; padding-top: 24px; }
+    .modal-confirmacao .modal-footer { border-top: 0; padding-bottom: 24px; }
+    .icone-sucesso { font-size: 3.2rem; color: #198754; }
+    .icone-erro { font-size: 3.2rem; color: #dc3545; }
+    .icone-aviso { font-size: 3.2rem; color: #ffc107; }
+    .dados-movimentacao {
+      background-color: #f5f7f9; border: 1px solid #e3e7eb; border-radius: 9px; padding: 14px; text-align: left;
+    }
+    .dados-movimentacao .linha-dado {
+      display: flex; justify-content: space-between; align-items: center; gap: 15px;
+      padding: 7px 0; border-bottom: 1px solid #e1e5e9;
+    }
+    .dados-movimentacao .linha-dado:last-child { border-bottom: none; }
+    .dados-movimentacao .label-dado { font-weight: 600; color: #6c757d; font-size: 0.82rem; }
+    .dados-movimentacao .valor-dado { font-weight: 600; text-align: right; font-size: 0.82rem; color: #343a40; }
+
+    /* =====================================================
+       RESPONSIVIDADE
+       ===================================================== */
+    @media (max-width: 991.98px) {
+      .top-header { margin-bottom: 14px; }
+      .table-responsive { max-height: 60vh; }
+      .tabela-historico-scroll { max-height: 60vh; }
+
+      /* Retorna o layout de estoque ao comportamento normal */
+      .coluna-estoque-esquerda,
+      .coluna-estoque-direita {
+        display: block;
+        height: auto !important;
+      }
+      .card-estoque-materiais {
+        display: block;
+        height: auto;
+      }
+      .card-estoque-materiais .table-container { display: block; }
+      .card-estoque-materiais .table-responsive { max-height: 60vh; }
+      .card-ultimos-registros { min-height: auto; }
+      #listaHistorico { max-height: none; overflow-y: visible; }
+    }
+
+    @media (max-width: 575.98px) {
+      .container-fluid { padding-left: 12px !important; padding-right: 12px !important; }
+      .top-header { padding: 16px; border-radius: 10px; }
+      .top-header h1 { font-size: 1.2rem; }
+      .header-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+      .card-custom, .card-historico { border-radius: 10px; }
+      .estoque-header { align-items: flex-start; }
+      .menu-btn { flex: 1; padding-left: 8px; padding-right: 8px; }
+      .historico-cabecalho { align-items: flex-start; }
+      .paginacao-container { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid py-3 px-3 px-lg-4">
+
+    <!-- CABEÇALHO -->
+    <div class="top-header">
+      <div class="d-flex align-items-center">
+        <div class="header-icon">📦</div>
+        <div>
+          <h1>Controle de Materiais - Bobinagem</h1>
+          <p>Registro e acompanhamento das movimentações de estoque</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="menu-navegacao">
+      <div class="d-flex">
+        <button type="button" class="menu-btn active" id="btnMenuEstoque">📦 &nbsp; Estoque</button>
+        <button type="button" class="menu-btn" id="btnMenuHistorico">◷ &nbsp; Histórico</button>
+      </div>
+    </div>
+
+    <!-- TELA ESTOQUE -->
+    <section id="telaEstoque" class="tela ativa">
+      <div class="row g-4">
+
+        <!-- COLUNA ESQUERDA -->
+        <div class="col-lg-4 col-md-5 coluna-estoque-esquerda">
+
+          <!-- NOVA MOVIMENTAÇÃO -->
+          <div class="card-custom p-4 card-nova-movimentacao">
+            <div class="card-title-custom mb-4">
+              <div class="card-title-icon">⇄</div>
+              <span>Nova Movimentação</span>
+            </div>
+
+            <form id="formMovimento">
+              <div class="mb-3">
+                <label class="form-label fw-bold">Tipo de Movimento</label>
+                <select class="form-select" id="tipo" required>
+                  <option value="Entrada">Entrada</option>
+                  <option value="Saída">Saída</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold">Material</label>
+                <select class="form-select" id="selectMaterial" required>
+                  <option value="">Carregando materiais...</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" required min="1" step="1" placeholder="Digite a quantidade">
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-bold">Responsável</label>
+                <input type="text" class="form-control" id="responsavel" required placeholder="Seu nome">
+              </div>
+
+              <button type="submit" class="w-100 btn btn-registrar btn-lg" id="btnSalvar">Registrar Operação</button>
+            </form>
+          </div>
+
+          <!-- ÚLTIMOS REGISTROS -->
+          <div class="card-historico p-4 card-ultimos-registros">
+            <div class="historico-titulo mb-3">
+              <div class="card-title-icon">◷</div>
+              <span>Últimos Registros</span>
+            </div>
+
+            <div id="listaHistorico" class="list-group list-group-flush">
+              <div class="list-group-item text-center text-muted py-3 small">Carregando histórico...</div>
+            </div>
+
+            <div class="text-center mt-3">
+              <button type="button" class="btn btn-sm btn-link text-decoration-none fw-semibold" id="btnVerHistorico">Ver histórico completo →</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <div class="col-lg-8 col-md-7 coluna-estoque-direita">
+          <div class="card-custom p-3 p-lg-4 card-estoque-materiais">
+
+            <div class="estoque-header">
+              <div>
+                <div class="estoque-titulo">
+                  <div class="icone-estoque">▦</div>
+                  <div>
+                    <div>Estoque de Materiais</div>
+                    <div class="estoque-subtitulo">Posição atual dos materiais cadastrados</div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-atualizar" id="btnAtualizar">↻ &nbsp; Atualizar</button>
+            </div>
+
+            <div class="table-container">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-custom" id="tabelaEstoque">
+                  <thead>
+                    <tr>
+                      <th>CÓDIGO</th>
+                      <th>MATERIAL</th>
+                      <th>UNIDADE</th>
+                      <th>ENTRADAS</th>
+                      <th>SAÍDAS</th>
+                      <th>ESTOQUE ATUAL</th>
+                    </tr>
+                  </thead>
+                  <tbody id="corpoTabela">
+                    <tr><td colspan="6" class="estado-tabela">Carregando dados...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TELA HISTÓRICO -->
+    <section id="telaHistorico" class="tela">
+
+      <div class="historico-cabecalho">
+        <div class="historico-cabecalho-titulo">
+          <div class="icone-estoque">◷</div>
+          <div>
+            <h2>Histórico de Movimentações</h2>
+            <p>Consulte todos os registros realizados no estoque</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-atualizar" id="btnAtualizarHistorico">↻ &nbsp; Atualizar</button>
+      </div>
+
+      <!-- RESUMO -->
+      <div class="row g-3 mb-4">
+        <div class="col-xl-3 col-md-6">
+          <div class="resumo-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="resumo-label">Total de movimentações</div>
+                <div class="resumo-valor" id="resumoTotal">0</div>
+              </div>
+              <div class="resumo-icone">⇄</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="resumo-card resumo-entrada">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="resumo-label">Entradas</div>
+                <div class="resumo-valor" id="resumoEntradas">0</div>
+              </div>
+              <div class="resumo-icone">↑</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="resumo-card resumo-saida">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="resumo-label">Saídas</div>
+                <div class="resumo-valor" id="resumoSaidas">0</div>
+              </div>
+              <div class="resumo-icone">↓</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="resumo-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="resumo-label">Quantidade movimentada</div>
+                <div class="resumo-valor" id="resumoQuantidade">0</div>
+              </div>
+              <div class="resumo-icone">#</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="filtros-card">
+        <div class="filtros-titulo">🔎 Filtros de pesquisa</div>
+
+        <div class="row g-3">
+          <div class="col-lg-4 col-md-6">
+            <label class="form-label">Material</label>
+            <select class="form-select" id="filtroMaterial">
+              <option value="">Todos os materiais</option>
+            </select>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <label class="form-label">Tipo</label>
+            <select class="form-select" id="filtroTipo">
+              <option value="">Todos</option>
+              <option value="Entrada">Entrada</option>
+              <option value="Saída">Saída</option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <label class="form-label">Responsável</label>
+            <select class="form-select" id="filtroResponsavel">
+              <option value="">Todos</option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <label class="form-label">Data inicial</label>
+            <input type="date" class="form-control" id="filtroDataInicial">
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <label class="form-label">Data final</label>
+            <input type="date" class="form-control" id="filtroDataFinal">
+          </div>
+
+          <div class="col-lg-9 col-md-6 d-flex align-items-end gap-2">
+            <button type="button" class="btn btn-filtrar" id="btnFiltrar">🔍 Filtrar</button>
+            <button type="button" class="btn btn-limpar" id="btnLimparFiltros">Limpar filtros</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA HISTÓRICO -->
+      <div class="card-custom p-3 p-lg-4">
+        <div class="tabela-historico-container">
+          <div class="tabela-historico-scroll">
+            <table class="table table-bordered table-hover tabela-historico">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>DATA/HORA</th>
+                  <th>TIPO</th>
+                  <th>CÓDIGO</th>
+                  <th>MATERIAL</th>
+                  <th>QUANTIDADE</th>
+                  <th>UNIDADE</th>
+                  <th>RESPONSÁVEL</th>
+                </tr>
+              </thead>
+              <tbody id="corpoHistorico">
+                <tr><td colspan="8" class="estado-tabela">Carregando histórico...</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="paginacao-container">
+            <div class="paginacao-info" id="paginacaoInfo">Nenhum registro</div>
+            <div id="paginacaoBotoes"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal fade modal-confirmacao" id="modalConfirmacao" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title fw-bold" id="tituloModal">Movimentação registrada</h5>
+        </div>
+
+        <div class="modal-body text-center">
+          <div id="iconeModal" class="icone-sucesso mb-3">✓</div>
+          <div id="mensagemModal" class="mb-3">Movimentação registrada com sucesso!</div>
+
+          <div id="dadosModal" class="dados-movimentacao">
+            <div class="linha-dado">
+              <span class="label-dado">ID</span>
+              <span class="valor-dado" id="modalID"></span>
+            </div>
+            <div class="linha-dado">
+              <span class="label-dado">Material</span>
+              <span class="valor-dado" id="modalMaterial"></span>
+            </div>
+            <div class="linha-dado">
+              <span class="label-dado">Tipo</span>
+              <span class="valor-dado" id="modalTipo"></span>
+            </div>
+            <div class="linha-dado">
+              <span class="label-dado">Quantidade</span>
+              <span class="valor-dado" id="modalQuantidade"></span>
+            </div>
+            <div class="linha-dado">
+              <span class="label-dado">Estoque atual</span>
+              <span class="valor-dado" id="modalEstoque"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary px-5 fw-bold" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* =====================================================
+       URL APPS SCRIPT
+       ===================================================== */
+    const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyR_vDSIROZAGPJDdfXRwlQha4-F7h0sH6v9P_A-XVzQHK2QIcPK02quYp2CC-sz3zM/exec";
+
+    /* =====================================================
+       VARIÁVEIS
+       ===================================================== */
+    let listaMateriais = [];
+    let historico = [];
+    let historicoFiltrado = [];
+    let paginaAtual = 1;
+    const REGISTROS_POR_PAGINA = 15;
+
+    /* Quantidade de registros exibidos no card "Últimos Registros" */
+    const QTD_ULTIMOS_REGISTROS = 5;
+
+    /* =====================================================
+       ESCAPAR HTML
+       ===================================================== */
+    function escaparHTML(texto) {
+      if (texto === null || texto === undefined) return "";
+      return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    /* =====================================================
+       FORMATAR CÓDIGO
+       ===================================================== */
+    function formatarCodigo(codigo) {
+      const numero = String(codigo).replace(/\D/g, "");
+      if (numero.length !== 12) return codigo;
+      return numero.substring(0, 3) + "." + numero.substring(3, 6) + "." + numero.substring(6, 12);
+    }
+
+    /* =====================================================
+       FORMATAR NÚMERO
+       ===================================================== */
+    function formatarNumero(valor) {
+      const numero = Number(valor) || 0;
+      if (Number.isInteger(numero)) return numero.toLocaleString("pt-BR");
+      return numero.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+
+    /* =====================================================
+       FORMATAR DATA/HORA
+       ===================================================== */
+    function formatarDataHora(dataHora) {
+      if (!dataHora) return "";
+      const data = new Date(dataHora);
+      if (isNaN(data.getTime())) return dataHora;
+      return data.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
+    }
+
+    /* =====================================================
+       DATA LOCAL
+       ===================================================== */
+    function obterDataLocal(dataHora) {
+      if (!dataHora) return "";
+      const data = new Date(dataHora);
+      if (isNaN(data.getTime())) return "";
+      const ano = data.getFullYear();
+      const mes = String(data.getMonth() + 1).padStart(2, "0");
+      const dia = String(data.getDate()).padStart(2, "0");
+      return ano + "-" + mes + "-" + dia;
+    }
+
+    /* =====================================================
+       MODAL SUCESSO
+       ===================================================== */
+    function mostrarSucesso(resultado) {
+      const modalElement = document.getElementById("modalConfirmacao");
+      const titulo = document.getElementById("tituloModal");
+      const icone = document.getElementById("iconeModal");
+      const mensagem = document.getElementById("mensagemModal");
+      const dadosModal = document.getElementById("dadosModal");
+
+      titulo.innerText = "Movimentação registrada";
+      titulo.className = "modal-title fw-bold text-success";
+      icone.className = "icone-sucesso mb-3";
+      icone.innerText = "✓";
+      mensagem.innerText = "Movimentação registrada com sucesso!";
+      mensagem.className = "mb-3";
+
+      document.getElementById("modalID").innerText = resultado.id || "-";
+      document.getElementById("modalMaterial").innerText = resultado.material || "-";
+      document.getElementById("modalTipo").innerText = resultado.tipo || "-";
+      document.getElementById("modalQuantidade").innerText = formatarNumero(resultado.quantidade) + " " + (resultado.unidade || "");
+      document.getElementById("modalEstoque").innerText = formatarNumero(resultado.estoqueAtual) + " " + (resultado.unidade || "");
+
+      dadosModal.style.display = "block";
+
+      const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modal.show();
+    }
+
+    /* =====================================================
+       MODAL AVISO
+       ===================================================== */
+    function mostrarAviso(mensagem, tipo = "danger") {
+      const modalElement = document.getElementById("modalConfirmacao");
+      const titulo = document.getElementById("tituloModal");
+      const icone = document.getElementById("iconeModal");
+      const mensagemElemento = document.getElementById("mensagemModal");
+      const dadosModal = document.getElementById("dadosModal");
+
+      dadosModal.style.display = "none";
+
+      if (tipo === "warning") {
+        titulo.innerText = "Atenção";
+        titulo.className = "modal-title fw-bold text-warning";
+        icone.className = "icone-aviso mb-3";
+        icone.innerText = "⚠";
+      } else {
+        titulo.innerText = "Não foi possível realizar a operação";
+        titulo.className = "modal-title fw-bold text-danger";
+        icone.className = "icone-erro mb-3";
+        icone.innerText = "✕";
+      }
+
+      mensagemElemento.innerText = mensagem;
+      mensagemElemento.className = "mb-3";
+
+      const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+      modal.show();
+    }
+
+    /* =====================================================
+       CARREGAR DADOS
+       ===================================================== */
+    function carregarDados() {
+      return new Promise((resolve, reject) => {
+        const callbackName = "callbackEstoque_" + Date.now();
+        const script = document.createElement("script");
+
+        const timeout = setTimeout(() => {
+          limpar();
+          reject(new Error("Tempo limite excedido ao consultar o Google Apps Script."));
+        }, 15000);
+
+        function limpar() {
+          clearTimeout(timeout);
+          if (script.parentNode) script.parentNode.removeChild(script);
+          delete window[callbackName];
+        }
+
+        window[callbackName] = function (resposta) {
+          limpar();
+          if (!resposta) {
+            reject(new Error("Resposta vazia do Google Apps Script."));
+            return;
+          }
+          if (resposta.sucesso === false) {
+            reject(new Error(resposta.erro || "Erro desconhecido no servidor."));
+            return;
+          }
+          resolve(resposta);
+        };
+
+        script.onerror = function () {
+          limpar();
+          reject(new Error("Não foi possível conectar ao Google Apps Script."));
+        };
+
+        script.src = URL_APPS_SCRIPT + "?acao=dados&callback=" + encodeURIComponent(callbackName);
+        document.body.appendChild(script);
+      });
+    }
+
+    /* =====================================================
+       CARREGAR HISTÓRICO COMPLETO
+       ===================================================== */
+    function carregarHistoricoCompleto() {
+      return new Promise((resolve, reject) => {
+        const callbackName = "callbackHistorico_" + Date.now();
+        const script = document.createElement("script");
+
+        const timeout = setTimeout(() => {
+          limpar();
+          reject(new Error("Tempo limite excedido ao carregar o histórico."));
+        }, 20000);
+
+        function limpar() {
+          clearTimeout(timeout);
+          if (script.parentNode) script.parentNode.removeChild(script);
+          delete window[callbackName];
+        }
+
+        window[callbackName] = function (resposta) {
+          limpar();
+          if (!resposta) {
+            reject(new Error("Resposta vazia do Google Apps Script."));
+            return;
+          }
+          if (resposta.sucesso === false) {
+            reject(new Error(resposta.erro || "Erro ao consultar o histórico."));
+            return;
+          }
+          resolve(resposta.movimentacoes || []);
+        };
+
+        script.onerror = function () {
+          limpar();
+          reject(new Error("Não foi possível conectar ao Google Apps Script."));
+        };
+
+        script.src = URL_APPS_SCRIPT + "?acao=historico&callback=" + encodeURIComponent(callbackName);
+        document.body.appendChild(script);
+      });
+    }
+
+    /* =====================================================
+       PREENCHER MATERIAIS DO FORMULÁRIO
+       ===================================================== */
+    function preencherMateriais() {
+      const select = document.getElementById("selectMaterial");
+      select.innerHTML = '<option value="">Selecione um item...</option>';
+
+      listaMateriais.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item.linha;
+        option.textContent = `${formatarCodigo(item.codigo)} - ${item.material} (${item.unidade})`;
+        select.appendChild(option);
+      });
+    }
+
+    /* =====================================================
+       PREENCHER FILTRO DE MATERIAL
+       ===================================================== */
+    function preencherFiltroMateriais() {
+      const select = document.getElementById("filtroMaterial");
+      const valorAtual = select.value;
+
+      select.innerHTML = '<option value="">Todos os materiais</option>';
+
+      /*
+       * Utilizamos a linha da planilha como valor.
+       * Isso evita problemas caso existam códigos repetidos na aba base.
+       */
+      listaMateriais.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = String(item.linha);
+        option.textContent = `${formatarCodigo(item.codigo)} - ${item.material}`;
+        select.appendChild(option);
+      });
+
+      if (Array.from(select.options).some(option => option.value === valorAtual)) {
+        select.value = valorAtual;
+      }
+    }
+
+    /* =====================================================
+       PREENCHER TABELA ESTOQUE
+       ===================================================== */
+    function preencherTabela() {
+      const corpoTabela = document.getElementById("corpoTabela");
+      corpoTabela.innerHTML = "";
+
+      if (!listaMateriais.length) {
+        corpoTabela.innerHTML = `
+          <tr>
+            <td colspan="6" class="estado-tabela">Nenhum material encontrado.</td>
+          </tr>
+        `;
+        return;
+      }
+
+      listaMateriais.forEach((item) => {
+        const estoqueAtual = Number(item.estoqueAtual) || 0;
+        const tr = document.createElement("tr");
+
+        if (estoqueAtual < 0) {
+          tr.classList.add("estoque-negativo");
+        }
+
+        tr.innerHTML = `
+          <td class="text-center">${escaparHTML(formatarCodigo(item.codigo))}</td>
+          <td class="fw-semibold">${escaparHTML(item.material)}</td>
+          <td class="text-center">${escaparHTML(item.unidade)}</td>
+          <td class="text-center text-success fw-bold">${formatarNumero(item.entradas)}</td>
+          <td class="text-center text-danger fw-bold">${formatarNumero(item.saidas)}</td>
+          <td class="text-center">
+            <span class="estoque-atual">${formatarNumero(estoqueAtual)}</span>
+          </td>
+        `;
+
+        corpoTabela.appendChild(tr);
+      });
+    }
+
+    /* =====================================================
+       PREENCHER ÚLTIMOS REGISTROS
+       ===================================================== */
+    function preencherHistorico() {
+      const listaDiv = document.getElementById("listaHistorico");
+      listaDiv.innerHTML = "";
+
+      if (!historico.length) {
+        listaDiv.innerHTML = `
+          <div class="list-group-item text-center text-muted py-3 small">
+            Nenhuma movimentação registrada.
+          </div>
+        `;
+        return;
+      }
+
+      /*
+       * Exibe os registros mais recentes (QTD_ULTIMOS_REGISTROS).
+       * O histórico completo continua disponível na tela "Histórico".
+       */
+      historico.slice(0, QTD_ULTIMOS_REGISTROS).forEach((h) => {
+        const badgeClass = h.tipo === "Entrada" ? "badge-entrada" : "badge-saida";
+        const dataHora = formatarDataHora(h.dataHora);
+
+        listaDiv.innerHTML += `
+          <div class="list-group-item historico-item">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <span class="badge ${badgeClass} me-1">${escaparHTML(h.tipo)}</span>
+                <span class="historico-material">${escaparHTML(h.material)}</span>
+              </div>
+              <span class="historico-data">${dataHora}</span>
+            </div>
+            <div class="historico-info">
+              Qtd: <b>${formatarNumero(h.quantidade)}</b>
+              &nbsp;•&nbsp;
+              Responsável: ${escaparHTML(h.responsavel)}
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    /* =====================================================
+       PREENCHER RESPONSÁVEIS
+       ===================================================== */
+    function preencherResponsaveis() {
+      const select = document.getElementById("filtroResponsavel");
+      const atual = select.value;
+
+      const responsaveis = [
+        ...new Set(
+          historico
+            .map(h => String(h.responsavel || "").trim())
+            .filter(nome => nome !== "")
+        )
+      ].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+      select.innerHTML = '<option value="">Todos</option>';
+
+      responsaveis.forEach((responsavel) => {
+        const option = document.createElement("option");
+        option.value = responsavel;
+        option.textContent = responsavel;
+        select.appendChild(option);
+      });
+
+      if (responsaveis.includes(atual)) {
+        select.value = atual;
+      }
+    }
+
+    /* =====================================================
+       APLICAR FILTROS
+       ===================================================== */
+    function aplicarFiltros() {
+      const materialLinha = document.getElementById("filtroMaterial").value;
+      const tipo = document.getElementById("filtroTipo").value;
+      const responsavel = document.getElementById("filtroResponsavel").value;
+      const dataInicial = document.getElementById("filtroDataInicial").value;
+      const dataFinal = document.getElementById("filtroDataFinal").value;
+
+      /* Descobrimos o material selecionado através da linha da aba base. */
+      let materialSelecionado = null;
+
+      if (materialLinha) {
+        materialSelecionado = listaMateriais.find(
+          item => String(item.linha) === String(materialLinha)
+        );
+      }
+
+      historicoFiltrado = historico.filter((h) => {
+        if (materialSelecionado) {
+          const mesmoCodigo = String(h.codigo) === String(materialSelecionado.codigo);
+          const mesmoMaterial = String(h.material) === String(materialSelecionado.material);
+          if (!mesmoCodigo || !mesmoMaterial) return false;
+        }
+
+        if (tipo && h.tipo !== tipo) return false;
+        if (responsavel && h.responsavel !== responsavel) return false;
+
+        const dataMovimentacao = obterDataLocal(h.dataHora);
+        if (dataInicial && dataMovimentacao < dataInicial) return false;
+        if (dataFinal && dataMovimentacao > dataFinal) return false;
+
+        return true;
+      });
+
+      paginaAtual = 1;
+      atualizarResumo();
+      renderizarTabelaHistorico();
+    }
+
+    /* =====================================================
+       ATUALIZAR RESUMO
+       ===================================================== */
+    function atualizarResumo() {
+      const total = historicoFiltrado.length;
+      const entradas = historicoFiltrado.filter(h => h.tipo === "Entrada").length;
+      const saidas = historicoFiltrado.filter(h => h.tipo === "Saída").length;
+      const quantidade = historicoFiltrado.reduce((total, h) => total + (Number(h.quantidade) || 0), 0);
+
+      document.getElementById("resumoTotal").innerText = formatarNumero(total);
+      document.getElementById("resumoEntradas").innerText = formatarNumero(entradas);
+      document.getElementById("resumoSaidas").innerText = formatarNumero(saidas);
+      document.getElementById("resumoQuantidade").innerText = formatarNumero(quantidade);
+    }
+
+    /* =====================================================
+       RENDERIZAR HISTÓRICO
+       ===================================================== */
+    function renderizarTabelaHistorico() {
+      const corpo = document.getElementById("corpoHistorico");
+      corpo.innerHTML = "";
+
+      if (!historicoFiltrado.length) {
+        corpo.innerHTML = `
+          <tr>
+            <td colspan="8" class="estado-tabela">
+              Nenhuma movimentação encontrada com os filtros selecionados.
+            </td>
+          </tr>
+        `;
+        atualizarPaginacao();
+        return;
+      }
+
+      const inicio = (paginaAtual - 1) * REGISTROS_POR_PAGINA;
+      const fim = inicio + REGISTROS_POR_PAGINA;
+      const registros = historicoFiltrado.slice(inicio, fim);
+
+      registros.forEach((h) => {
+        const tr = document.createElement("tr");
+        const classeTipo = h.tipo === "Entrada" ? "badge-historico-entrada" : "badge-historico-saida";
+        const classeQuantidade = h.tipo === "Entrada" ? "quantidade-entrada" : "quantidade-saida";
+
+        tr.innerHTML = `
+          <td class="text-center"><span class="id-movimentacao">${escaparHTML(h.id)}</span></td>
+          <td class="text-center">${escaparHTML(formatarDataHora(h.dataHora))}</td>
+          <td class="text-center"><span class="${classeTipo}">${escaparHTML(h.tipo)}</span></td>
+          <td class="text-center"><span class="codigo-historico">${escaparHTML(formatarCodigo(h.codigo))}</span></td>
+          <td><span class="fw-semibold">${escaparHTML(h.material)}</span></td>
+          <td class="text-center"><span class="${classeQuantidade}">${formatarNumero(h.quantidade)}</span></td>
+          <td class="text-center">${escaparHTML(obterUnidadeMaterial(h.codigo, h.material))}</td>
+          <td>${escaparHTML(h.responsavel)}</td>
+        `;
+
+        corpo.appendChild(tr);
+      });
+
+      atualizarPaginacao();
+    }
+
+    /* =====================================================
+       OBTER UNIDADE
+       ===================================================== */
+    function obterUnidadeMaterial(codigo, material) {
+      const item = listaMateriais.find((m) => {
+        return String(m.codigo) === String(codigo) && String(m.material) === String(material);
+      });
+
+      if (item) return item.unidade || "";
+      return "";
+    }
+
+    /* =====================================================
+       PAGINAÇÃO
+       ===================================================== */
+    function atualizarPaginacao() {
+      const total = historicoFiltrado.length;
+      const totalPaginas = Math.max(1, Math.ceil(total / REGISTROS_POR_PAGINA));
+
+      const inicio = total === 0 ? 0 : ((paginaAtual - 1) * REGISTROS_POR_PAGINA) + 1;
+      const fim = Math.min(paginaAtual * REGISTROS_POR_PAGINA, total);
+
+      document.getElementById("paginacaoInfo").innerText =
+        total === 0 ? "Nenhum registro" : `${inicio}–${fim} de ${formatarNumero(total)} registros`;
+
+      const container = document.getElementById("paginacaoBotoes");
+      container.innerHTML = "";
+
+      if (totalPaginas <= 1) return;
+
+      const btnAnterior = document.createElement("button");
+      btnAnterior.type = "button";
+      btnAnterior.className = "btn-pagina";
+      btnAnterior.innerText = "‹";
+      btnAnterior.disabled = paginaAtual <= 1;
+      btnAnterior.addEventListener("click", () => {
+        if (paginaAtual > 1) {
+          paginaAtual--;
+          renderizarTabelaHistorico();
+        }
+      });
+      container.appendChild(btnAnterior);
+
+      let inicioPagina = Math.max(1, paginaAtual - 2);
+      let fimPagina = Math.min(totalPaginas, paginaAtual + 2);
+
+      if (paginaAtual <= 2) fimPagina = Math.min(totalPaginas, 5);
+      if (paginaAtual >= totalPaginas - 1) inicioPagina = Math.max(1, totalPaginas - 4);
+
+      for (let pagina = inicioPagina; pagina <= fimPagina; pagina++) {
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.className = "btn-pagina" + (pagina === paginaAtual ? " ativo" : "");
+        botao.innerText = pagina;
+        botao.addEventListener("click", () => {
+          paginaAtual = pagina;
+          renderizarTabelaHistorico();
+        });
+        container.appendChild(botao);
+      }
+
+      const btnProxima = document.createElement("button");
+      btnProxima.type = "button";
+      btnProxima.className = "btn-pagina";
+      btnProxima.innerText = "›";
+      btnProxima.disabled = paginaAtual >= totalPaginas;
+      btnProxima.addEventListener("click", () => {
+        if (paginaAtual < totalPaginas) {
+          paginaAtual++;
+          renderizarTabelaHistorico();
+        }
+      });
+      container.appendChild(btnProxima);
+    }
+
+    /* =====================================================
+       ABRIR TELA
+       ===================================================== */
+    function abrirTela(tela) {
+      const telaEstoque = document.getElementById("telaEstoque");
+      const telaHistorico = document.getElementById("telaHistorico");
+      const btnEstoque = document.getElementById("btnMenuEstoque");
+      const btnHistorico = document.getElementById("btnMenuHistorico");
+
+      if (tela === "estoque") {
+        telaEstoque.classList.add("ativa");
+        telaHistorico.classList.remove("ativa");
+        btnEstoque.classList.add("active");
+        btnHistorico.classList.remove("active");
+      } else {
+        telaEstoque.classList.remove("ativa");
+        telaHistorico.classList.add("ativa");
+        btnEstoque.classList.remove("active");
+        btnHistorico.classList.add("active");
+        carregarTelaHistorico();
+      }
+    }
+
+    /* =====================================================
+       CARREGAR HISTÓRICO
+       ===================================================== */
+    async function carregarTelaHistorico() {
+      const corpo = document.getElementById("corpoHistorico");
+
+      try {
+        corpo.innerHTML = `
+          <tr>
+            <td colspan="8" class="estado-tabela">Carregando histórico completo...</td>
+          </tr>
+        `;
+
+        historico = await carregarHistoricoCompleto();
+
+        preencherFiltroMateriais();
+        preencherResponsaveis();
+        aplicarFiltros();
+
+      } catch (erro) {
+        console.error("Erro ao carregar histórico:", erro);
+
+        corpo.innerHTML = `
+          <tr>
+            <td colspan="8" class="text-center text-danger py-4">
+              Erro ao carregar o histórico.
+              <br>
+              <small>${escaparHTML(erro.message)}</small>
+            </td>
+          </tr>
+        `;
+
+        document.getElementById("paginacaoInfo").innerText = "Erro ao carregar";
+        document.getElementById("paginacaoBotoes").innerHTML = "";
+
+        mostrarAviso("Não foi possível carregar o histórico: " + erro.message, "danger");
+      }
+    }
+
+    /* =====================================================
+       LIMPAR FILTROS
+       ===================================================== */
+    function limparFiltros() {
+      document.getElementById("filtroMaterial").value = "";
+      document.getElementById("filtroTipo").value = "";
+      document.getElementById("filtroResponsavel").value = "";
+      document.getElementById("filtroDataInicial").value = "";
+      document.getElementById("filtroDataFinal").value = "";
+      aplicarFiltros();
+    }
+
+    /* =====================================================
+       REGISTRAR MOVIMENTAÇÃO
+       ===================================================== */
+    async function registrarMovimentacao(dados) {
+      const resposta = await fetch(URL_APPS_SCRIPT, {
+        method: "POST",
+        redirect: "follow",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(dados)
+      });
+
+      if (!resposta.ok) {
+        throw new Error("Erro HTTP " + resposta.status);
+      }
+
+      const resultado = await resposta.json();
+      return resultado;
+    }
+
+    /* =====================================================
+       ATUALIZAR TELA PRINCIPAL
+       ===================================================== */
+    async function atualizarTela() {
+      try {
+        const resposta = await carregarDados();
+
+        listaMateriais = resposta.materiais || [];
+        historico = resposta.movimentacoes || [];
+
+        preencherMateriais();
+        preencherFiltroMateriais();
+        preencherTabela();
+        preencherHistorico();
+
+      } catch (erro) {
+        console.error("Erro ao carregar dados:", erro);
+
+        const corpoTabela = document.getElementById("corpoTabela");
+
+        corpoTabela.innerHTML = `
+          <tr>
+            <td colspan="6" class="text-center text-danger py-4">
+              Erro ao carregar os dados.
+              <br>
+              <small>${escaparHTML(erro.message)}</small>
+            </td>
+          </tr>
+        `;
+
+        mostrarAviso("Não foi possível carregar os dados da planilha: " + erro.message, "danger");
+      }
+    }
+
+    /* =====================================================
+       SUBMIT FORMULÁRIO
+       ===================================================== */
+    document.getElementById("formMovimento").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const linha = document.getElementById("selectMaterial").value;
+
+      if (!linha) {
+        mostrarAviso("Por favor, selecione um material.", "warning");
+        return;
+      }
+
+      const tipo = document.getElementById("tipo").value;
+      const quantidade = Number(document.getElementById("quantidade").value);
+
+      if (!quantidade || quantidade <= 0) {
+        mostrarAviso("Informe uma quantidade válida.", "warning");
+        return;
+      }
+
+      const responsavel = document.getElementById("responsavel").value.trim();
+
+      if (!responsavel) {
+        mostrarAviso("Informe o responsável pela movimentação.", "warning");
+        return;
+      }
+
+      const item = listaMateriais.find(material => String(material.linha) === String(linha));
+
+      if (!item) {
+        mostrarAviso("Material não encontrado.", "danger");
+        return;
+      }
+
+      const btn = document.getElementById("btnSalvar");
+      btn.disabled = true;
+      btn.innerText = "Salvando...";
+
+      try {
+        const dados = {
+          tipo: tipo,
+          linha: Number(linha),
+          codigo: item.codigo,
+          material: item.material,
+          quantidade: quantidade,
+          responsavel: responsavel
+        };
+
+        const resultado = await registrarMovimentacao(dados);
+
+        if (!resultado || resultado.sucesso !== true) {
+          throw new Error(resultado?.erro || "O servidor não confirmou a movimentação.");
+        }
+
+        document.getElementById("quantidade").value = "";
+
+        await atualizarTela();
+
+        mostrarSucesso(resultado);
+
+      } catch (erro) {
+        console.error("Erro ao registrar:", erro);
+        mostrarAviso("Erro ao registrar movimentação: " + erro.message, "danger");
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Registrar Operação";
+      }
+    });
+
+    /* =====================================================
+       BOTÃO ATUALIZAR ESTOQUE
+       ===================================================== */
+    document.getElementById("btnAtualizar").addEventListener("click", async function () {
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = "Atualizando...";
+
+      try {
+        await atualizarTela();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = "↻ &nbsp; Atualizar";
+      }
+    });
+
+    /* =====================================================
+       MENU ESTOQUE
+       ===================================================== */
+    document.getElementById("btnMenuEstoque").addEventListener("click", function () {
+      abrirTela("estoque");
+    });
+
+    /* =====================================================
+       MENU HISTÓRICO
+       ===================================================== */
+    document.getElementById("btnMenuHistorico").addEventListener("click", function () {
+      abrirTela("historico");
+    });
+
+    /* =====================================================
+       VER HISTÓRICO
+       ===================================================== */
+    document.getElementById("btnVerHistorico").addEventListener("click", function () {
+      abrirTela("historico");
+    });
+
+    /* =====================================================
+       ATUALIZAR HISTÓRICO
+       ===================================================== */
+    document.getElementById("btnAtualizarHistorico").addEventListener("click", async function () {
+      const btn = this;
+      btn.disabled = true;
+      btn.innerHTML = "Atualizando...";
+
+      try {
+        await carregarTelaHistorico();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = "↻ &nbsp; Atualizar";
+      }
+    });
+
+    /* =====================================================
+       FILTRAR
+       ===================================================== */
+    document.getElementById("btnFiltrar").addEventListener("click", function () {
+      aplicarFiltros();
+    });
+
+    /* =====================================================
+       LIMPAR
+       ===================================================== */
+    document.getElementById("btnLimparFiltros").addEventListener("click", function () {
+      limparFiltros();
+    });
+
+    /* =====================================================
+       ALTERAÇÃO DO FILTRO MATERIAL
+       ===================================================== */
+    document.getElementById("filtroMaterial").addEventListener("change", function () {
+      aplicarFiltros();
+    });
+
+    /* =====================================================
+       ALTERAÇÃO DO TIPO
+       ===================================================== */
+    document.getElementById("filtroTipo").addEventListener("change", function () {
+      aplicarFiltros();
+    });
+
+    /* =====================================================
+       ALTERAÇÃO DO RESPONSÁVEL
+       ===================================================== */
+    document.getElementById("filtroResponsavel").addEventListener("change", function () {
+      aplicarFiltros();
+    });
+
+    /* =====================================================
+       SINCRONIZAR ALTURA DAS COLUNAS (ESTOQUE)
+       ===================================================== */
+    /*
+     * Em telas largas, a coluna direita (Estoque de Materiais)
+     * deve ter exatamente a mesma altura da coluna esquerda
+     * (Nova Movimentação + Últimos Registros). A tabela de
+     * estoque então rola internamente dentro desse espaço,
+     * evitando tanto o espaço vazio quanto o desalinhamento
+     * entre as colunas.
+     */
+    function sincronizarAlturaColunas() {
+      const colunaEsquerda = document.querySelector(".coluna-estoque-esquerda");
+      const colunaDireita = document.querySelector(".coluna-estoque-direita");
+
+      if (!colunaEsquerda || !colunaDireita) return;
+
+      if (window.innerWidth >= 992) {
+        colunaDireita.style.height = colunaEsquerda.offsetHeight + "px";
+      } else {
+        colunaDireita.style.height = "";
+      }
+    }
+
+    function iniciarSincronizacaoAltura() {
+      const colunaEsquerda = document.querySelector(".coluna-estoque-esquerda");
+
+      if (!colunaEsquerda) return;
+
+      /* Reage a mudanças de tamanho da janela */
+      window.addEventListener("resize", sincronizarAlturaColunas);
+
+      /* Reage a mudanças de conteúdo da coluna esquerda
+         (ex.: histórico carregado, itens adicionados) */
+      if (window.ResizeObserver) {
+        const observer = new ResizeObserver(sincronizarAlturaColunas);
+        observer.observe(colunaEsquerda);
+      }
+
+      sincronizarAlturaColunas();
+    }
+
+    /* =====================================================
+       INICIALIZAÇÃO
+       ===================================================== */
+    document.addEventListener("DOMContentLoaded", function () {
+      atualizarTela();
+      iniciarSincronizacaoAltura();
+    });
+  </script>
+
+</body>
+</html>
